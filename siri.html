@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting a Timer with Siri</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fira.css">
+</head>
+
+<body>
+
+  <div class="info">
+    <h1 class="diagram-name">Setting a Timer with Siri</h1>
+    <p>Starting a timer by telling Siri to do it</p>
+  </div>
+
+  <div class="diagram-container">
+
+    <video class="video" src="assets/siri.mp4" width="300" height="480" controls loop muted></video>
+
+    <div class="column environment">
+      <h2>Environment</h2>
+      <p class="quote">What can i do?</p>
+      <div class="block neutral">
+        <h3>User Action</h3>
+        <p>Saying "Hey Siri, set a timer for 3 minutes" (or a number of similar phrases)</p>
+      </div>
+      <div class="block neutral">
+        <h3>System Action</h3>
+        <p>A 3 minute timer starts</p>
+      </div>
+      <p class="quote">How do I do it?</p>
+      <div class="block no">
+        <h3>No Action Presentation</h3>
+        <p>Not advertised anywhere in the interface; it's impossible to know whether the exact phrase used is going to be recongnized</p>
+      </div>
+    </div>
+
+    <div class="column before">
+      <h2>Before</h2>
+      <p class="quote">What is going to happen?</p>
+      <div class="block no">
+        <h3>No Preview</h3>
+        <p>No way to know what will happen without triggering the action</p>
+      </div>
+    </div>
+
+    <div class="column during">
+      <h2>During</h2>
+      <p class="quote">What is happening now?</p>
+      <div class="block parent">
+        <h3>Feedback</h3>
+        <div class="block">
+          <h3>Confirmatory</h3>
+          <p>Confirms that the user's voice is understood by transcribing their command on the screen</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column after">
+      <h2>After</h2>
+      <p class="quote">What happened?</p>
+      <div class="column">
+        <div class="block">
+          <h3>Feedback</h3>
+          <p>Siri says "Ok, 3 minutes and counting..." and the timer is shown on the screen</p>
+        </div>
+        <p class="quote">How do I go back?</p>
+        <div class="block parent">
+          <h3>Reversibility</h3>
+          <p>Effects of the action can be reversed with little effort</p>
+          <div class="block">
+            <h3>Unrelated Action</h3>
+            <p>Saying "Hey Siri, cancel the timer" will cancel it</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

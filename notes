@@ -1,0 +1,29 @@
+
+## General Recommendations
+When it comes to designing general purpose interfaces to be used by people without extensive experience with this or similar systems, feedback
+
+* Use direct manipulation and inverse action reversibility whenever possible
+* Provide feedback at every level, can make up for lack of DM and IAR but never ideal
+
+## Structure
+
+1. Introduction
+  * motivation
+  * zoom example
+
+2. Theoretical Background
+  * motivate why feedback is good
+  * reference AUP, ZUI, Direct Manipulation
+
+3. Taxonomy
+  * breakdown of every category
+
+4. Application
+  * Examples for applying the taxonomy edge cases
+  * Possible improvements for each example
+  * hyperlink -> hovercard
+  * overview/detail -> semantic mail
+  * ctrl-c -> visualize clipboard
+
+5. Future work
+  * semantic interaction

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Taxonomy of Feedback in User Interfaces</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fira.css">
+</head>
+<body>
+<xmp theme="united" style="display:none;">
+
+# A Taxonomy of Feedback in User Interfaces
+
+## Introduction
+
+Every interaction between a human and a machine is *designed* - At some point during the process of building the machine, somebody has to decide which actions it can perform, how they are triggered, what information users get in return, what will happen as a result, and so on.
+
+When making these decisions, there are many factors at play. How do users understand what they can do with the system? How do they know *how* to do it? What will happen when they do it? If they've made a mistake, how can they go back?
+All of these factors (and several more), taken together determine the usability of an interaction. This makes it difficult to compare different interactions intuitively, because it requires keeping all the factors in mind.
+
+To alleviate this problem I have designed a framework that enables the categorization of the properties of interactions into distinct categories. This allows for comparisons between interactions, but also forces designers to think about every aspect of an interaction in detail, unveiling potential weak spots and opportunities for improvement.
+
+With digital interfaces, much more so than with physical ones, designers have almost unlimited freedom to define their behavior. Because of the inherent flexibility of the computer as a medium, an interaction in a digital interface can be designed in many different ways, which all provide the same functionality, but wildly different kinds of feedback.
+
+For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these are different in structure, complexity, and the feedback they provide.
+
+<div class="adjacent-videos">
+  <video class="video desktop" src="assets/zoom-buttons.webm" width="420" height="480" controls loop muted></video>
+  <video class="video" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
+</div>
+
+While + and - buttons are highly discoverable and usable with little or no learning upfront, they provide no feedback during the interaction itself, and require many separate interactions to get to the desired result. Pinch-to-zoom on the other hand is very hard to discover without knowing about it, but provides a tight, interactive feedback loop during the interaction, which makes it very efficient once it has been learned.
+
+When comparing different interactions with similar effects like in this case, it can be difficult to stay on top of all the different variables at play - user actions, discoverability, learnability, feedback at different stages, and reversibility. In order to make interactions comparable while considering all these factors, I have developed a comprehensive framework within which they can be categorized. This makes it easy to compare individual aspects of interactions in isolation, without losing track of the whole picture.
+
+<iframe class="diagram-embed" src="zoom-buttons.html" width="1100" height="450"></iframe>
+<iframe class="diagram-embed" src="pinch-to-zoom.html" width="1100" height="500"></iframe>
+
+When comparing the feedback diagrams for both interactions it is easy to see where and how they are different. For example, the lack of cues before the interaction in the pinch-to-zoom example is immediately visible because of the red boxes in the first two columns. This kind of macro reading already gives a good sense of where the interaction is and isn't providing feedback. Reading the descriptions gives a more nuanced picture of the situation, explaining the exact nature of the feedback or lack thereof.
+
+## Taxonomy
+
+<iframe class="diagram-embed" src="diagram.html" width="1100" height="590"></iframe>
+
+This is the structure of the framework, with all the possible properties it can contain. Each box represents a property of the interaction, or lack thereof. The grey boxes (*User Action* and *System Action*) are general properties of an interaction which are present for every action, by definition. The colored blocks represent different types of feedback which can be present or not (red box if it isn't present, one or more green boxes if it is). The transparent boxes structure similar types of feedback in larger categories.
+
+<div class="adjacent diagram-container">
+  <div class="column">
+  </div>
+  <div class="block parent">
+    <h3>Group</h3>
+    <div class="block neutral">
+      <h3>Compulsory property</h3>
+    </div>
+    <div class="block">
+      <h3>Optional property present</h3>
+    </div>
+    <div class="block no">
+      <h3>Optional property not present</h3>
+    </div>
+  </div>
+</div>
+
+When applying the framework to a specific action, the diagram is simplified, and only the applicable properties are kept. If an interaction provides a preview, for example, it will contain a green box in the *before* column, otherwise a red one. In both cases, the description will outline the specifics of the property being present or not.
+
+The framework is organized of four main categories, which correspond to the stages of the interaction timeline. *Environment* describes general properties of the action, which exist independently of it being performed. *Before* describes what information about the effect of the action is available to the user before starting it. *During* describes the feedback users are getting between the start and end of the interaction. *After* describes what information users have after the action is complete, both about what happened and how to go back.
+
+
+### Environment
+
+<div class="diagram-container">
+  <div class="adjacent">
+    <div class="column">
+      <p class="quote">What can I do?</p>
+      <div class="block neutral">
+        <h3>User Action</h3>
+        <p>Physical action the user performs</p>
+      </div>
+      <div class="block neutral">
+        <h3>System Action</h3>
+        <p>System response to the physical action</p>
+      </div>
+    </div>
+    <div class="column">
+      <p class="quote">How do I do it?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Action Presentation</h3>
+          <p>How user action and system action are presented to the user</p>
+        </div>
+        <div class="block no">
+          <h3>No Action Presentation</h3>
+          <p>Availability of the action is not made explicit in the interface</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+The **Environment** describes what the action is, how it is performed, and how it is presented. It is independent of the interaction timeline.
+
+<div class="article-block neutral">
+**User Action** is the physical action the user has to perform in order to trigger the action. It has to be present in every case, otherwise there is no way for the user to start the action.
+<ul>
+  Examples:
+  <li>Touching a certain part of the screen</li>
+  <li>Pressing a number of keys simultaneously</li>
+  <li>Speaking a certain phrase into the microphone</li>
+</ul>
+</div>
+<div class="article-block neutral">
+**System Action** is the system's response to the user action, the result of the interaction. It also has to be present in every case, because otherwise the action wouldn't do anything.
+<br>
+**Binary: There are two clearly distinguishable possible outcomes.**
+<br>
+**Discrete: There are a number of clearly distinguishable possible outcomes.**
+<br>
+**Continuous: There are many possible outcomes within a continuous spectrum.**
+<br>
+<ul>
+  Examples:
+  <li>The device is locked</li>
+  <li>An email is sent</li>
+  <li>Files are deleted</li>
+</ul>
+</div>
+<div class="article-block">
+**Action Presentation** is how the action is presented to the user in the interface. This can be hard to pin down as it relies on convention and prior knowledge in many cases. For example, knowing that a text label with a background color is a button and can be clicked is clear to most computer users, but not to someone who has never seen a computer. Similarly, many users know that a file can be saved by pressing `ctrl+s`, even though there are no visible indicators for this in an application, because it is a common command shared across most applications. When determining whether *Action Presentation* is present in an example, use your best judgement as to whether most users will understand what to do.
+
+<figure class="figure">
+  <video class="example" src="/assets/cursor.ogv" autoplay loop muted></video>
+  The blinking cursor indicates the possibility of text input
+</figure>
+<figure class="figure">
+  <img class="example" src="/assets/buttons.png">
+  The border and background gradient identify these elements as buttons, which tells the user that clicking them will yield an effect
+</figure>
+<figure class="figure">
+  <video class="example" height="70px" src="/assets/slide-animation.mp4" autoplay loop muted></video>
+  Label, arrow and animation all tell the user to swipe to the right
+</figure>
+
+</div>
+
+### Before
+
+<div class="diagram-container">
+  <div class="column">
+    <p class="quote">What is going to happen?</p>
+    <div class="adjacent">
+      <div class="block parent">
+        <h3>Preview</h3>
+        <p class="less-wide">Gives information on the results of the action, before the action itself is started</p>
+        <div class="adjacent">
+          <div class="block">
+            <h3>Passive</h3>
+            <p>Static elements previewing the outcome of the action</p>
+          </div>
+          <div class="block">
+            <h3>Active</h3>
+            <p>User-triggered elements previewing the outcome of the action</p>
+          </div>
+        </div>
+      </div>
+      <div class="block no">
+        <h3>No Preview</h3>
+        <p>No way to know what will happen without triggering the action</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+**Before** starting the action, it is important for the user to know what will happen as a consequence of the action. This helps them find the actions they are looking for in an interface, and saves them the surprise of actions that don't do what they thought they would.
+
+<div class="article-block parent">
+A **Preview** gives the user information about what will happen, before the action itself starts. A Preview can be symbolic (as in the case of the text on a navigation element) or literal (as in the case of an image thumbnail).
+
+<div class="article-block">
+A **Passive Preview** gives the user information about the outcome, without them having to interact with the system. Passive preview elements are either static, and therefore always available, or triggered in some indirect way by the user, for example by not doing anything for a few seconds.
+
+<figure class="figure">
+  <img class="example" src="/assets/buttons-signup.png">
+  The text on these buttons explains what will happen when they are clicked
+</figure>
+<figure class="figure">
+  <img class="example" src="/assets/hyperlink.png">
+  The text label on the hyperlink tells the user where it will lead them
+</figure>
+<figure class="figure">
+  <img class="example" src="/assets/button-close.png">
+  The ⨯ icon is widely used to mean "close" in software, so most users will understand it even though there is no explicit text label explaining it
+</figure>
+</div>
+
+<div class="article-block">
+An **Active Preview** gives the user information about the outcome of the action when they interact with the system before starting the action itself. The interaction that triggers the preview must be different from the one that triggers the real action. For example, starting to scroll and then scrolling back immediately wouldn't qualify as a preview, because it is part of the action itself. This is why active previews are often triggered by secondary interactions, such as hover (with a mouse), or long tap (on touch screens).
+
+<div>
+  <div class="figure-container">
+    <figure class="figure vertical">
+      <video class="example" height="300px" src="assets/twitter.ogv" controls loop muted></video>
+      On Twitter, hovering over a user's name shows a hovercard with their bio
+    </figure>
+    <div class="column">
+      <figure class="figure vertical">
+        <img class="example" width="340px" src="assets/hyperlink-hover.png">
+        When hovering on a hyperlink, the link's URL is shown in the bottom left corner of the browser window
+      </figure>
+      <figure class="figure vertical">
+        <video class="example" width="340px" src="assets/youtube.ogv" controls loop muted></video>
+        When hovering over the timeline on a Youtube video, a thumbnail previews the video at a different timestamp
+      </figure>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+### During
+
+
+<div class="diagram-container">
+  <div class="adjacent">
+    <div class="column">
+      <p class="quote">Is my input working?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Input Feedback</h3>
+          <p>Confirms user input but gives no information on progress</p>
+        </div>
+        <div class="column">
+          <div class="block no">
+            <h3>No Input Feedback</h3>
+            <p>No feedback on whether the input was received</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <p class="quote">What is happening?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Action Feedback</h3>
+          <p class="wide">Continuous Feedback on current progress of the action</p>
+          <div class="adjacent">
+            <div class="block">
+              <h3>Autonomous</h3>
+              <p>Action progresses autonomously</p>
+            </div>
+            <div class="block parent">
+              <h3>User-Controlled</h3>
+              <p>User controls the progress of the action, making it reversible</p>
+              <div class="block">
+                <h3>Direct Manipulation</h3>
+                <p>Interaction and result on the same object</p>
+              </div>
+              <div class="block">
+                <h3>Indirect Manipulation</h3>
+                <p>Interaction and result on different objects</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="block no">
+            <h3>No Action Feedback</h3>
+            <p>No information on progress between initial and final state</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+**During** the interaction it is important to give the user information on what is happening. If the action requires continuous input, then this feedback is crucial, because it informs how they proceed with the interaction. If it happens autonomously, then feedback is no less important, because it explains to the user what the system is doing between the initial and final state are related.
+
+There are two main categories: Feedback that tells the user that their input was received (Input Feedback), and feedback that shows the user what is happening as a result of their input (Action Feedback).
+
+<div class="article-block">
+**Input Feedback** confirms the user's input, reassuring them that their action was recognized. It doesn't give any information about the status or progress of the action. In some cases, even though the user input was received properly, the action itself doesn't work. For example, clicking a file the user doesn't have permission to open will not open the file, even though this is the correct interaction for opening it.
+
+<figure class="figure">
+  <video class="example" height="70px" src="assets/siri-transcript.mp4" autoplay loop muted></video>
+  While talking to Siri, the command is transcribed on the screen in real time, showing the user that they are being heard
+</figure>
+<figure class="figure">
+  <video class="example" src="assets/material-button.ogv" autoplay loop muted></video>
+  The radial reaction on the button confirms that the click was received
+</figure>
+<figure class="figure">
+  <video class="example" src="assets/siri.ogv" controls loop muted></video>
+  Touch keyboard
+</figure>
+
+</div>
+
+<div class="article-block parent">
+**Action Feedback** informs the user about the current progress of the action or previews its outcome while the action is happening. This progress can either be autonomous, or controlled by continuous user input. Both of these can be used in combination in a single interaction, such as in the case of kinetic scrolling and other physics-based effects.
+
+<div class="article-block parent">
+With **User-Controlled** feedback, the progress of the action is driven by continuous user input.
+
+<div class="article-block">
+**Direct Manipulation** are actions where the user interacts directly with the element that is being manipulated.
+
+<div class="figure-container">
+  <figure class="figure vertical">
+    <video class="example" height="290px" src="assets/inkscape-dm.ogv" controls loop muted></video>
+    In many graphics applications position, scale, and rotation can all be adjusted by directly manipulating elements
+  </figure>
+  <figure class="figure vertical">
+    <video class="example" height="290px" src="assets/dnd-undo.ogv" controls loop muted></video>
+    Dragging a file from one file browser window to the other moves it to the folder that is open in the other window
+  </figure>
+</div>
+
+</div>
+<div class="article-block">
+**Indirect Manipulation** are actions where interaction and effect happen on different objects.
+
+<div class="figure-container two">
+  <figure class="figure vertical">
+    <video class="example" src="assets/font-slider.ogv" controls loop muted></video>
+    The slider manipulates the size of the type specimen in real time
+  </figure>
+  <figure class="figure vertical">
+    <video class="example" width="300px" src="assets/blur-slider.ogv" controls loop muted></video>
+    The slider manipulates the blur value for the selected rectangle in real time
+  </figure>
+</div>
+</div>
+</div>
+
+<div class="article-block">
+**Autonomous** feedback is triggered by the user indirectly, and they have no control over its progress. The trigger can be either the start of the interaction, or, in case of a user-controlled interaction, in response to the course the action is taking. The crucial difference to user-controlled feedback is that once it has started it will run its course, and the user cannot influence the direction it is taking until it is finished.
+
+
+Android homescreen labels, drag and drop trashcan
+
+<div class="figure-container">
+  <figure class="figure vertical">
+    <video class="example" height="360px" src="assets/multitasking-transition.mp4" controls loop muted></video>
+    Pressing the multitasking button on Android starts an animated transition to the multitasking view
+  </figure>
+  <div class="column">
+    <figure class="figure">
+      <video class="example" height="210px" src="assets/scroll-animation.ogv" controls loop muted></video>
+      When clicking on the scrollbar, the page autonomously scrolls to the new position with an animation
+    </figure>
+    <figure class="figure vertical">
+      <video class="example" width="490px" src="/assets/reload-progressbar.ogv" controls loop muted></video>
+      The progress bar gives a sense of what the loading status of the page is
+    </figure>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="article-block no">
+If there is no **No Action Feedback**, that means the user gets no information about the course of the action between the start and end of the action.
+<figure class="figure">
+  <video class="example" height="220px" src="/assets/hyperlink-back.ogv" controls loop muted></video>
+</figure>
+
+</div>
+
+
+### After
+
+<div class="diagram-container">
+  <div class="adjacent">
+    <div class="column">
+      <p class="quote">What happened?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Response</h3>
+          <p>Consequences of the action are clearly visible</p>
+        </div>
+        <div class="block no">
+          <h3>No Response</h3>
+          <p>After the action it is not clear what exactly the effect was</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="column">
+      <p class="quote">How do I go back?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Reversibility</h3>
+          <p class="wide">Effects of the action can be reversed with little effort</p>
+          <div class="adjacent">
+            <div class="block">
+              <h3>Inverse Action</h3>
+              <p>Opposite of the action will return system to its previous state</p>
+            </div>
+            <div class="block">
+              <h3>Unrelated Action</h3>
+              <p>Different action enables returning to the previous state</p>
+            </div>
+          </div>
+        </div>
+        <div class="block no">
+          <h3>No Reversibility</h3>
+          <p>Not reversible without considerable effort or additional knowledge</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+**After** the interaction, it's important for the user to be able to see what the system did in response to their action. In case the action was a mistake, they need the ability to easily undo the action and return to the previous state.
+
+<div class="article-block">
+The **Response** to an action is the effect of the action that is visible to the user. This is often synonymous with the System Action (for example if the action is a type of navigation), but there are also cases where they are quite different, because the response is just a symbolic representation of the real (non-visual) action being performed.
+<ul>
+Examples:
+<li>An application is open after clicking its icon</li>
+<li>The device is locked after pressing the power button</li>
+<li>A document is printed after giving the command to do so</li>
+</div>
+
+<div class="article-block no">
+**No response:** Since most actions provide some kind of response, the concept is most easily illustrated with a counterexample: The keyboard command to copy selected text (`ctrl+c`). If there is an active text selection, this shortcut copies the selected text into the clipboard. After the action, there is no visible reaction from the system whatsoever. The only way to know if the clipboard content changed is to paste it somewhere else.
+<figure class="figure">
+  <video class="example" height="240px" src="/assets/copy.ogv" controls loop muted></video>
+</figure>
+</div>
+
+<div class="article-block parent">
+**Reversibility** is the possibility to undo an action and return to the previous state. In the context of this framework, it is defined as being able to do this easliy, i.e. with minimal cognitive and physical effort. This means it has to be undoable with a single, relatively simple action.
+
+<div class="article-block">
+ **Inverse Action** reversibility is when the opposite action produces the opposite effect, making it easy to reverse an action without having to learn a new interaction.
+
+ <div class="figure-container">
+  <figure class="figure vertical">
+    <video class="example" height="430px" src="/assets/medium-sidebar.mp4" controls loop muted></video>
+    The sidebar in many Android apps can be opened by sliding it in from the left and closed by sliding it back.
+  </figure>
+  <figure class="figure vertical">
+    <video class="example" height="430px" src="/assets/dnd-undo.ogv" controls loop muted></video>
+    Dragging and dropping files to the wrong folder is easily reversible by dragging them back to the original folder
+  </figure>
+</div>
+</div>
+<div class="article-block">
+**Unrelated Action** reversibility is when there is a quick, convenient way to undo the action, but it is not the opposite of the action itself. This means that some additional learning is required, and the process is less direct and intuitive.
+
+ <div class="figure-container">
+  <figure class="figure vertical">
+    <video class="example" height="180px" src="/assets/back.ogv" controls loop muted></video>
+    After opening a folder, the back button will navigate back to the previous location
+  </figure>
+  <figure class="figure vertical">
+    <video class="example" height="180px" src="/assets/delete-undo.ogv" controls loop muted></video>
+    After deleting files a banner with an undo button appears, making it easy to restore accidentally deleted files
+  </figure>
+</div>
+
+</div>
+</div>
+
+<div class="article-block no">
+  **Not Reversible** actions include both ones that are impossible to undo (e.g. sending an email), and actions that are theoretically reversible, but it requires a lot of effort or learning to do so (e.g. recovering a file after it was deleted). This is because if reversing the action is as complex as the action itself (or more so), it stops being part of that action and becomes its own action.
+  <figure class="figure">
+    <video class="example" src="/assets/back.ogv" controls loop muted></video>
+    Restore file from trash
+  </figure>
+</div>
+
+## Examples
+I have tried to define the categories to be useful in practice to distinguish different types of actions. This means that not every possible variable is included, and in some cases the categories are not perfect for describing all the nuances of a specific interaction. In these cases, the descriptions of the individual types of feedback can be used to provide additional context. That said, the framework does work very well to describe and compare many of the most common interactions used in real-world applications.
+
+In fact, the taxonomy is applicable to interactions even outside the typical realm of screen-based graphical user interfaces. The following examples show the breadth of possible applications.
+
+This example ticks all the boxes: The interface explains what to do and how to do it, gives instant, user-controlled feeback during the interaction, and is easily reversible with the inverse action.
+<iframe class="diagram-embed" src="slide-to-unlock.html" width="1100" height="450"></iframe>
+
+Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. There is little in the way of preview or presentation, but the simplicity of the physical action and easy reversibility alleviate that somewhat.
+<iframe class="diagram-embed" src="scrolling.html" width="1100" height="500"></iframe>
+
+On the other side of the spectrum there are interactions with very little feedback. There are examples for this in regular GUIs, but it is even more frequent in keyboard and voice interactions.
+
+During voice interactions, where there is uncertainty about whether the computer even understands the natural language command, input feedback is crucial.
+<iframe class="diagram-embed" src="siri.html" width="1100" height="510"></iframe>
+
+<iframe class="diagram-embed" src="pull-to-refresh.html" width="1100" height="500"></iframe>
+
+<iframe class="diagram-embed" src="youtube-seek.html" width="1100" height="500"></iframe>
+
+<iframe class="diagram-embed" src="swipe-to-clear.html" width="1100" height="500"></iframe>
+
+<iframe class="diagram-embed" src="drag-and-drop.html" width="1100" height="500"></iframe>
+
+
+## Application
+The goal of this project is to provide a tool that makes it easier to analyze interactions, compare them, and find potential problems in how they give feedback to the user. To demonstrate the taxonomy's usefulness in this regard, I have used it to analyze a few real-world interaction patterns, highlighting where they succeed, where they fall short, and what could be improved.
+
+
+### Clicking for Navigation
+Links, tabs, menus, and other navigation elements that are clicked or tapped all suffer from the same problem: It is [hard to know](http://www.jonikorpi.com/zoomable-ui-for-the-web) what exactly will happen when you click them, even if they are clearly labelled. This is because the click is an inherently ambiguous interaction. It doesn't have a direction, duration, or other variable that conveys meaning beyond the coordinates of the click.
+
+<figure class="figure center">
+<img class="example" src="assets/click-menus.svg">
+<p>Will clicking this menu button open a small popover menu or a huge fullscreen menu (or something entirely different)?</p>
+</figure>
+
+The simplicity and ubiquity of the click also mean that it is used in so many different contexts and patterns that it is impossible to predict what kind of behavior it will trigger. Unlike the right-click, which almost always opens contextual menus, the left click (or tap on mobile) can do anything, from opening applications to turning off the device. This means that unless the clicked element explains what will happen in great detail, the user is left with a lot of uncertainty.
+
+This problem gets worse when the action doesn't provide sufficient feedback while it's happening. Then the user not only doesn't know what will happen, but they don't even see it happening, which means that they have to compare the new state to their memory of the previous one and find the difference. To make matters worse, inverse action reversibility is impossible (there is no opposite to a click), which means that going back if the result isn't what the user wanted always requires some effort.
+
+The hyperlink is the protypical example for an interaction that involves clicking, and it has all of the problems described above.
+
+<iframe class="diagram-embed" src="hyperlink.html" width="1100" height="500"></iframe>
+
+The action presentation is probably sufficient for most users, but the preview could definitely be better. Since the action has no built-in reversibility and preview through something like direct manipulation, providing a comprehensive preview is crucial in helping users decide whether they want to start the action or not. In this case, a way to improving the preview (at least on the desktop) could be to provide an active preview when the user hovers the link, i.e. displaying additional information about the navigation target in a small overlay.
+
+<figure class="figure center">
+  <video class="video" src="assets/twitter.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
+  <p>A hovercard on Twitter previewing a user profile</p>
+</figure>
+
+Input feedback is provided by the physical input device and web browser natively in this case. The mouse provides haptic feedback, and the link color changes to red while it is being clicked.
+
+There is no action feedback during the action, it instantly switches from start to end state. Adding autonomous feedback (e.g. an animated transition) would be definitely possible in this case, though a native implementation of this on the web is still [work in progress](http://chrislord.net/index.php/2015/04/24/web-navigation-transitions).
+
+<figure class="figure center" style="width: 520px">
+  <video class="video" src="assets/link-animation.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
+  <p>An example of a semantic animation explaining the state change and relationship between states</p>
+</figure>
+
+Adding user-controlled feedback to something like a hyperlink would be difficult without changing the interaction significantly. There are, however, examples of it being used effectively for navigation of hierarchical structures.
+
+<figure class="figure center" style="width: 320px">
+  <video class="video" src="assets/facebook-paper.mp4" style="width: 100%; height: 325px;" controls loop muted></video>
+  <p>In Facebook Paper, posts are cards which can be opened by swiping up or tapping, and closed by swiping down.</p>
+</figure>
+
+As for reversibility, the browser's back button is not ideal, but at least it is a consistent interaction which works on all websites. This makes up for some of the non-intuitiveness of having to perform an action completely different from the previous one in order to undo its effects.
+
+
+### CTRL+C Copying
+As with most keyboard commands, this example provides no feedback before or during the action. However, it is particular in that it doesn't even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
+<iframe class="diagram-embed" src="ctrl+c.html" width="1100" height="430"></iframe>
+
+Since it is a keyboard command, it is forgivable that there are no action presentation and preview, as that would require graphical elements on the screen, at which point it might as well be a button. Keyboard shortcuts are an optional feature for power users, and as such it is acceptable that they require some learning. A good system for discovering and looking up shortcuts (e.g. [GNOME's shortcut window](https://blogs.gnome.org/aday/2015/12/14/shortcuts-love)) at the OS- or application level is of course important, but that is a much broader issue.
+
+When it comes to feedback during the interaction though, there is no such excuse. Providing input feedback could be as simple as adding a sound, or a light visual cue, such as a brief change in background color on the copied text. Action feedback would be more complicated, because it would require a visual representation of the clipboard somewhere in the system, e.g. a built-in [clipboard manager](http://www.makeuseof.com/tag/6-tools-manage-linux-clipboard).
+
+<figure class="figure center" style="width: 400px">
+<img class="example original" src="assets/clipboard-indicator.png">
+<p>The *Clipboard Indicator* GNOME Shell extension keeps a history of recent clipboard entries, thus making it possible to go back to previously copied snippets</p>
+</figure>
+
+With a visual representation of the clipboard at OS level, it would be possible move the copied text from its origin to the clipboard with an animation. This would explain the process at a glance. It could even enable copying by direct manipulation, i.e. by dragging the selected text to the clipboard area.
+<figure class="figure center" style="width: 448px">
+  <video class="video" src="assets/copy-animation.ogv" style="width: 100%; height: 240px;" controls loop muted></video>
+  <p>Tentative redesign with autonomous action feedback. The animation conveys that the text is being copied and shows where it is going.</p>
+</figure>
+
+The same is true for response: A visual clipboard would make the effect of the action explicit, as the copied text would be visible without having to be pasted.
+
+Though it would not make reversibility very easy, it would mean that data loss due to accidental overwiting of the clipboard is not possible anymore, eliminating a possible source of frustration for users.
+
+
+## Future Work
+An aspect of this project I have not yet investigated in detail is the power and complexity of user and system actions. Considering the possibile number of inputs and outputs that different actions produce (for example, pressing a button has one possible outcome, moving a slider can have thousands), there should be a way to systematically distinguish between different levels of complexity. This could take the form of additional subcategories in the *Environment* column, but has to be investigated further.
+
+...
+
+## Conclusion
+I have developed a comprehensive framework to categorize and compare feedback in user interfaces. I have then applied the framework to real-world examples and shown how to use it to analyze interactions in detail, find problems in how they provide feedback, and make suggestions for improving it.
+
+...
+
+</xmp>
+<script src="strapdown.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

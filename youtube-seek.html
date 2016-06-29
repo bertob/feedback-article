@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Seek</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fira.css">
+</head>
+
+<body>
+
+  <div class="info">
+    <h1 class="diagram-name">Youtube Seek</h1>
+    <p>Changing the current timestamp in a video</p>
+  </div>
+
+  <div class="diagram-container">
+
+    <video class="video desktop" src="assets/youtube.ogv" style="width: 300px; height: 150px;" controls loop muted></video>
+
+    <div class="column environment">
+      <h2>Environment</h2>
+      <p class="quote">What can i do?</p>
+      <div class="block parent">
+        <h3>User Action</h3>
+        <p class="wide">Physical action the user performs</p>
+        <div class="adjacent">
+          <div class="block neutral">
+            <h3>Discrete</h3>
+            <p>Limited number of possible inputs, which are easily distinguishable, e.g. mouse click, tap screen</p>
+          </div>
+          <div class="block neutral">
+            <h3>Continuous</h3>
+            <p>Continuous spectrum of possible inputs, e.g. swipe screen, mouse movement, voice interfaces, 3D touch</p>
+          </div>
+        </div>
+      </div>
+      <div class="block parent">
+        <h3>System Action</h3>
+        <p>System response to the physical action</p>
+        <div class="adjacent">
+          <div class="block neutral">
+            <h3>Discrete</h3>
+            <p>Limited number of possible outcomes, e.g. device is unlocked, app is opened</p>
+          </div>
+        </div>
+      </div>
+      <p class="quote">How do I do it?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Action Presentation</h3>
+          <p>How affordance and system action are presented to the user, e.g. a scrollbar indicates scrollability</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column before">
+      <h2>Before</h2>
+
+      <p class="quote">What is going to happen?</p>
+      <div class="block parent">
+        <h3>Preview</h3>
+        <p>Gives information on the results of the action, before the action itself is started</p>
+        <div class="block">
+          <h3>Passive</h3>
+          <p>Static elements previewing the outcome of the action, e.g. text on button</p>
+        </div>
+        <div class="block">
+          <h3>Active</h3>
+          <p>User-triggered elements previewing the outcome of the action, e.g. Alt text</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column during">
+      <h2>During</h2>
+
+      <p class="quote">Is my input working?</p>
+      <div class="block">
+        <h3>Input Feedback</h3>
+        <p>Confirms user input but gives no information on progress, e.g. active state of button</p>
+      </div>
+
+      <p class="quote">What is happening?</p>
+      <div class="column">
+        <div class="block no">
+          <h3>No Action Feedback</h3>
+          <p>No information on progress between initial and final state (hard cut)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column after">
+      <h2>After</h2>
+
+      <p class="quote">What happened?</p>
+      <div class="column">
+        <div class="adjacent">
+          <div class="block">
+            <h3>Response</h3>
+            <p>Consequences of the action are clearly visible, e.g. the screen is locked after pressing power button</p>
+          </div>
+        </div>
+
+        <p class="quote">How do I go back?</p>
+        <div class="adjacent">
+          <div class="block parent">
+            <h3>Reversibility</h3>
+            <p>Effects of the action can be reversed with little effort</p>
+            <div class="block">
+              <h3>Inverse Action</h3>
+              <p>Opposite of the action will return system to its previous state, e.g. moving i slider to its previous value</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

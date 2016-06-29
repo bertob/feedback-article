@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pull to Refresh</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fira.css">
+</head>
+
+<body>
+
+  <div class="info">
+    <h1 class="diagram-name">Pull to Refresh</h1>
+    <p>Pulling down the scrolling view past a certain threshold and then releasing reloads the content</p>
+  </div>
+  <div class="diagram-container">
+
+    <video class="video" src="assets/pull-to-refresh.mp4" width="300" height="480" controls loop muted></video>
+
+    <div class="column environment">
+      <h2>Environment</h2>
+      <p class="quote narrow">What can i do?<br>How do I do it?</p>
+      <div class="block neutral">
+        <h3>User Action</h3>
+        <p>Swiping the screen vertically for a certain distance</p>
+      </div>
+      <div class="block neutral">
+        <h3>System Action</h3>
+        <p>Reloads the screen's content, if pulled past a threshold</p>
+      </div>
+      <div class="block no">
+        <h3>No Action Presentation</h3>
+        <p>Not advertised anywhere in the interface</p>
+      </div>
+    </div>
+
+    <div class="column before">
+      <h2>Before</h2>
+      <p class="quote">What is going to happen?</p>
+      <div class="block no">
+        <h3>No Preview</h3>
+        <p>The interface doesn't explain that the displayed information will be refreshed</p>
+      </div>
+    </div>
+
+    <div class="column during">
+      <h2>During</h2>
+      <p class="quote">What is happening now?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Feedback</h3>
+          <p class="wide">Continuously gives information on current progress of the action; different types of feedback can be freely combined</p>
+          <div class="adjacent">
+            <div class="block parent">
+              <h3>User-Controlled</h3>
+              <p>User controls time during the action</p>
+              <div class="block">
+                <h3>Direct Manipulation</h3>
+                <p>Pulling down the scrollview</p>
+              </div>
+              <div class="block">
+                <h3>Indirect Manipulation</h3>
+                <p>Rotating arrow indicator</p>
+              </div>
+            </div>
+            <div class="block parent">
+              <h3>Autonomous</h3>
+              <p>Time is automatic</p>
+              <div class="block">
+                <h3>Non-Interactive</h3>
+                <p>Once the action is confirmed, the view scrolls back, and the content fades to the updated data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column after">
+      <h2>After</h2>
+      <p class="quote narrow">what happened?<br>How do I go back?</p>
+      <div class="block">
+        <h3>Feedback</h3>
+        <p>The content has been updated</p>
+      </div>
+      <div class="block no">
+        <h3>No Reversibility</h3>
+        <p>Cannot be undone, not even with a lot of effort</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

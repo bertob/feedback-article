@@ -13,10 +13,10 @@
 <div style="
   position: fixed;
   top: 1em;
-  right: -2.4em;
+  right: -2.6em;
   transform: rotate(45deg);
   padding: 0.23em 3em 0.15em;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 600;
   letter-spacing: 0.1em;
   background-color: blue;
@@ -58,7 +58,10 @@ When comparing the feedback diagrams for both interactions it is easy to see whe
 
 <iframe class="diagram-embed wide" src="diagram.html" width="1320" height="500"></iframe>
 
+<div class="adjacent">
+<p>
 This is the structure of the framework, with all the possible properties it can contain. Each box represents a property of the interaction, or lack thereof. The grey boxes (*User Action* and *System Action*) are general properties of an interaction which are present for every action, by definition. The colored blocks represent different types of feedback which can be present or not (red box if it isn't present, one or more green boxes if it is). The transparent boxes structure similar types of feedback in larger categories.
+</p>
 
 <div class="adjacent diagram-container">
   <div class="column">
@@ -75,6 +78,8 @@ This is the structure of the framework, with all the possible properties it can 
       <h3>Optional property not present</h3>
     </div>
   </div>
+</div>
+
 </div>
 
 When applying the framework to a specific action, the diagram is simplified, and only the applicable properties are kept. If an interaction provides a preview, for example, it will contain a green box in the *before* column, otherwise a red one. In both cases, the description will outline the specifics of the property being present or not.
@@ -338,10 +343,7 @@ With **User-Controlled** feedback, the progress of the action is driven by conti
 </div>
 
 <div class="article-block">
-**Autonomous** feedback is triggered by the user indirectly, and they have no control over its progress. The trigger can be either the start of the interaction, or, in case of a user-controlled interaction, in response to the course the action is taking. The crucial difference to user-controlled feedback is that once it has started it will run its course, and the user cannot influence the direction it is taking until it is finished.
-
-
-Android homescreen labels, drag and drop trashcan
+**Autonomous** feedback is triggered by the user indirectly, and they have no control over its progress. It can be triggered by the start of the interaction, or, in case of a user-controlled interaction, in response to the course the action is taking. The crucial difference to user-controlled feedback is that once it has started it will run its course, and the user cannot influence the direction it is taking until it is finished.
 
 <div class="figure-container">
   <figure class="figure vertical">
@@ -415,7 +417,7 @@ If there is no **No Action Feedback**, that means the user gets no information a
   </div>
 </div>
 
-**After** the interaction, it's important for the user to be able to see what the system did in response to their action. In case the action was a mistake, they need the ability to easily undo the action and return to the previous state.
+**After** the interaction, it is important for the user to be able to see what the system did in response to their action. In case the action was a mistake, they need the ability to easily undo the action and return to the previous state.
 
 <div class="article-block">
 The **Response** to an action is the effect of the action that is visible to the user. This is often synonymous with the System Action (for example if the action is a type of navigation), but there are also cases where they are quite different, because the response is just a symbolic representation of the real (non-visual) action being performed.
@@ -472,24 +474,19 @@ Examples:
 </div>
 
 ## Examples
-I have tried to define the categories to be useful in practice to distinguish different types of actions. This means that not every possible variable is included, and in some cases the categories are not perfect for describing all the nuances of a specific interaction. In these cases, the descriptions of the individual types of feedback can be used to provide additional context. That said, the framework does work very well to describe and compare many of the most common interactions used in real-world applications.
+I have tried to define the categories to be useful in practice to distinguish different types of actions. This means that not every possible variable is included, and in some cases the categories are not perfect for describing all the nuances of a specific interaction. In these cases, the descriptions of the individual types of feedback can be used to provide additional context. That said, the framework does work very well to describe and compare many of the most common interactions used in real-world software.
+In fact, the taxonomy is even applicable to interactions outside the typical realm of screen-based graphical user interfaces. The following examples show the breadth of possible applications.
 
-In fact, the taxonomy is applicable to interactions even outside the typical realm of screen-based graphical user interfaces. The following examples show the breadth of possible applications.
-
-This example ticks all the boxes: The interface explains what to do and how to do it, gives instant, user-controlled feeback during the interaction, and is easily reversible with the inverse action.
+This example provides feedback at every level: The interface explains what to do and how to do it, gives instant, user-controlled feeback during the interaction, and is easily reversible with the inverse action.
 <iframe class="diagram-embed" src="slide-to-unlock.html" width="1100" height="450"></iframe>
 
-Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. There is little in the way of preview or presentation, but the simplicity of the physical action and easy reversibility alleviate that somewhat.
-<iframe class="diagram-embed" src="scrolling.html" width="1100" height="500"></iframe>
+Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. Action presentation is implicitly provided by the fact that the content is cut off at the edge of the screen, which hints at there being more content outside the visible viewport, and that moving the page can unveil it. There is no preview, but in general, direct manipulation requires less external feedback before the action, since it is built into the manipulation itself. For example, an intrinsically reversible action like scrolling doesn't need a preview as much as e.g. a hyperlink, because scrolling a little and then going back can serve as a kind of active preview.
+<iframe class="diagram-embed narrow" src="scrolling.html" width="880" height="500"></iframe>
 
-On the other side of the spectrum there are interactions with very little feedback. There are examples for this in regular GUIs, but it is even more frequent in keyboard and voice interactions.
+On the other side of the spectrum there are interactions with very little feedback. There are examples for this in regular GUIs, but it is even more frequent in keyboard and voice interactions. During voice interactions, where there is uncertainty about whether the computer even understands the natural language command, input feedback is crucial.
+<iframe class="diagram-embed narrow" src="siri.html" width="880" height="510"></iframe>
 
-During voice interactions, where there is uncertainty about whether the computer even understands the natural language command, input feedback is crucial.
-<iframe class="diagram-embed" src="siri.html" width="1100" height="510"></iframe>
-
-<iframe class="diagram-embed" src="pull-to-refresh.html" width="1100" height="500"></iframe>
-
-<iframe class="diagram-embed" src="youtube-seek.html" width="1100" height="500"></iframe>
+<iframe class="diagram-embed narrow" src="youtube-seek.html" width="880" height="500"></iframe>
 
 <iframe class="diagram-embed" src="swipe-to-clear.html" width="1100" height="500"></iframe>
 
@@ -510,7 +507,7 @@ Links, tabs, menus, and other navigation elements that are clicked or tapped all
 
 The simplicity and ubiquity of the click also mean that it is used in so many different contexts and patterns that it is impossible to predict what kind of behavior it will trigger. Unlike the right-click, which almost always opens contextual menus, the left click (or tap on mobile) can do anything, from opening applications to turning off the device. This means that unless the clicked element explains what will happen in great detail, the user is left with a lot of uncertainty.
 
-This problem gets worse when the action doesn't provide sufficient feedback while it's happening. Then the user not only doesn't know what will happen, but they don't even see it happening, which means that they have to compare the new state to their memory of the previous one and find the difference. To make matters worse, inverse action reversibility is impossible (there is no opposite to a click), which means that going back if the result isn't what the user wanted always requires some effort.
+This problem gets worse when the action doesn't provide sufficient feedback while it is happening. Then the user not only doesn't know what will happen, but they don't even see it happening, which means that they have to compare the new state to their memory of the previous one and find the difference. To make matters worse, inverse action reversibility is impossible (there is no opposite to a click), which means that going back if the result isn't what the user wanted always requires some effort.
 
 The hyperlink is the protypical example for an interaction that involves clicking, and it has all of the problems described above.
 

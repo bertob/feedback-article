@@ -41,8 +41,8 @@ With digital interfaces, much more so than with physical ones, designers have al
 For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these are different in structure, complexity, and the feedback they provide.
 
 <div class="adjacent-videos">
-  <video class="video desktop" src="assets/zoom-buttons.webm" width="420" height="480" controls loop muted></video>
-  <video class="video" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
+  <video class="video example desktop" src="assets/zoom-buttons.webm" width="420" height="480" controls loop muted></video>
+  <video class="video example" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
 </div>
 
 While + and - buttons are highly discoverable and usable with little or no learning upfront, they provide no feedback during the interaction itself, and require many separate interactions to get to the desired result. Pinch-to-zoom on the other hand is very hard to discover without knowing about it, but provides a tight, interactive feedback loop during the interaction, which makes it very efficient once it has been learned.
@@ -56,7 +56,7 @@ When comparing the feedback diagrams for both interactions it is easy to see whe
 
 ## Taxonomy
 
-<iframe class="diagram-embed" src="diagram.html" width="1100" height="590"></iframe>
+<iframe class="diagram-embed wide" src="diagram.html" width="1320" height="500"></iframe>
 
 This is the structure of the framework, with all the possible properties it can contain. Each box represents a property of the interaction, or lack thereof. The grey boxes (*User Action* and *System Action*) are general properties of an interaction which are present for every action, by definition. The colored blocks represent different types of feedback which can be present or not (red box if it isn't present, one or more green boxes if it is). The transparent boxes structure similar types of feedback in larger categories.
 
@@ -297,10 +297,6 @@ There are two main categories: Feedback that tells the user that their input was
   <video class="example" src="assets/material-button.ogv" autoplay loop muted></video>
   The radial reaction on the button confirms that the click was received
 </figure>
-<figure class="figure">
-  <video class="example" src="assets/siri.ogv" controls loop muted></video>
-  Touch keyboard
-</figure>
 
 </div>
 
@@ -472,11 +468,7 @@ Examples:
 </div>
 
 <div class="article-block no">
-  **Not Reversible** actions include both ones that are impossible to undo (e.g. sending an email), and actions that are theoretically reversible, but it requires a lot of effort or learning to do so (e.g. recovering a file after it was deleted). This is because if reversing the action is as complex as the action itself (or more so), it stops being part of that action and becomes its own action.
-  <figure class="figure">
-    <video class="example" src="assets/back.ogv" controls loop muted></video>
-    Restore file from trash
-  </figure>
+  **Not Reversible** actions include both ones that are impossible to undo (e.g. sending an email), and actions that are theoretically reversible, but require a lot of effort or learning to do so (e.g. recovering a file after it was deleted). This is because if reversing the action is as complex as the action itself (or more so), it stops being part of that action and becomes its own action.
 </div>
 
 ## Examples
@@ -527,7 +519,7 @@ The hyperlink is the protypical example for an interaction that involves clickin
 The action presentation is probably sufficient for most users, but the preview could definitely be better. Since the action has no built-in reversibility and preview through something like direct manipulation, providing a comprehensive preview is crucial in helping users decide whether they want to start the action or not. In this case, a way to improving the preview (at least on the desktop) could be to provide an active preview when the user hovers the link, i.e. displaying additional information about the navigation target in a small overlay.
 
 <figure class="figure center">
-  <video class="video" src="assets/twitter.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
+  <video class="video example" src="assets/twitter.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
   <p>A hovercard on Twitter previewing a user profile</p>
 </figure>
 
@@ -536,14 +528,14 @@ Input feedback is provided by the physical input device and web browser natively
 There is no action feedback during the action, it instantly switches from start to end state. Adding autonomous feedback (e.g. an animated transition) would be definitely possible in this case, though a native implementation of this on the web is still [work in progress](http://chrislord.net/index.php/2015/04/24/web-navigation-transitions).
 
 <figure class="figure center" style="width: 520px">
-  <video class="video" src="assets/link-animation.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
+  <video class="video example" src="assets/link-animation.ogv" style="width: 100%; height: 325px;" controls loop muted></video>
   <p>An example of a semantic animation explaining the state change and relationship between states</p>
 </figure>
 
 Adding user-controlled feedback to something like a hyperlink would be difficult without changing the interaction significantly. There are, however, examples of it being used effectively for navigation of hierarchical structures.
 
 <figure class="figure center" style="width: 320px">
-  <video class="video" src="assets/facebook-paper.mp4" style="width: 100%; height: 325px;" controls loop muted></video>
+  <video class="video example" src="assets/facebook-paper.mp4" style="width: 100%; height: 325px;" controls loop muted></video>
   <p>In Facebook Paper, posts are cards which can be opened by swiping up or tapping, and closed by swiping down.</p>
 </figure>
 
@@ -565,7 +557,7 @@ When it comes to feedback during the interaction though, there is no such excuse
 
 With a visual representation of the clipboard at OS level, it would be possible move the copied text from its origin to the clipboard with an animation. This would explain the process at a glance. It could even enable copying by direct manipulation, i.e. by dragging the selected text to the clipboard area.
 <figure class="figure center" style="width: 448px">
-  <video class="video" src="assets/copy-animation.ogv" style="width: 100%; height: 240px;" controls loop muted></video>
+  <video class="video example" src="assets/copy-animation.ogv" style="width: 100%; height: 240px;" controls loop muted></video>
   <p>Tentative redesign with autonomous action feedback. The animation conveys that the text is being copied and shows where it is going.</p>
 </figure>
 

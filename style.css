@@ -78,13 +78,15 @@ div,
   margin: 0 auto;
 }
 .diagram-embed {
-  /*transform: translateX(-130px);*/
   margin: 1em calc((1100px - 800px)/-2);
   border: none;
   box-shadow: 0 4px 18px rgba(0,0,0, 0.2);
 }
 .diagram-embed.wide {
   margin: 1em calc((1320px - 800px)/-2);
+}
+.diagram-embed.narrow {
+  margin: 1em calc((880px - 800px)/-2);
 }
 .diagram-container {
   margin: 0 auto;

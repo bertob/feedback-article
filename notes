@@ -5,6 +5,10 @@ When it comes to designing general purpose interfaces to be used by people witho
 * Use direct manipulation and inverse action reversibility whenever possible
 * Provide feedback at every level, can make up for lack of DM and IAR but never ideal
 
+Binary: There are two clearly distinguishable possible outcomes.
+Discrete: There are a number of clearly distinguishable possible outcomes.
+Continuous: There are many possible outcomes within a continuous spectrum.
+
 ## Structure
 
 1. Introduction

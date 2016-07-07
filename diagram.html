@@ -17,7 +17,7 @@
 
     <div class="column environment">
       <h2>Environment</h2>
-      <p class="quote">What can i do?</p>
+      <p class="quote">What can I do?</p>
       <div class="block neutral">
         <h3>User Action</h3>
         <p>Physical action the user performs, e.g. touching the screen, clicking</p>
@@ -72,11 +72,9 @@
           <h3>Input Feedback</h3>
           <p>Confirms user input but gives no information on progress, e.g. active state of a button</p>
         </div>
-        <div class="column">
-          <div class="block no">
-            <h3>No Input Feedback</h3>
-            <p>No feedback on whether the input was received</p>
-          </div>
+        <div class="block no">
+          <h3>No Input Feedback</h3>
+          <p>No feedback on whether the input was received</p>
         </div>
       </div>
 
@@ -104,11 +102,9 @@
             </div>
           </div>
         </div>
-        <div class="column">
-          <div class="block no">
-            <h3>No Action Feedback</h3>
-            <p>No information on progress between initial and final state (hard cut)</p>
-          </div>
+        <div class="block no">
+          <h3>No Action Feedback</h3>
+          <p>No information on progress between initial and final state (hard cut)</p>
         </div>
       </div>
     </div>
@@ -117,36 +113,34 @@
       <h2>After</h2>
 
       <p class="quote">What happened?</p>
-      <div class="column">
-        <div class="adjacent">
+      <div class="adjacent">
+        <div class="block">
+          <h3>Response</h3>
+          <p>Consequences of the action are clearly visible, e.g. the screen is locked after pressing power button</p>
+        </div>
+        <div class="block no">
+          <h3>No Response</h3>
+          <p>After the action it is not clear what exactly the effect was, e.g. copying to clipboard</p>
+        </div>
+      </div>
+
+      <p class="quote">How do I go back?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Reversibility</h3>
+          <p>Effects of the action can be reversed easily</p>
           <div class="block">
-            <h3>Response</h3>
-            <p>Consequences of the action are clearly visible, e.g. the screen is locked after pressing power button</p>
+            <h3>Inverse Action</h3>
+            <p>Opposite of the action returns system to its previous state, e.g. moving i slider to its previous value</p>
           </div>
-          <div class="block no">
-            <h3>No Response</h3>
-            <p>After the action it is not clear what exactly the effect was, e.g. copying to clipboard</p>
+          <div class="block">
+            <h3>Unrelated Action</h3>
+            <p>Different action enables returning to the previous state, e.g. back/undo button</p>
           </div>
         </div>
-
-        <p class="quote">How do I go back?</p>
-        <div class="adjacent">
-          <div class="block parent">
-            <h3>Reversibility</h3>
-            <p>Effects of the action can be reversed easily</p>
-            <div class="block">
-              <h3>Inverse Action</h3>
-              <p>Opposite of the action returns system to its previous state, e.g. moving i slider to its previous value</p>
-            </div>
-            <div class="block">
-              <h3>Unrelated Action</h3>
-              <p>Different action enables returning to the previous state, e.g. back/undo button</p>
-            </div>
-          </div>
-          <div class="block no">
-            <h3>No Reversibility</h3>
-            <p>Not reversible without considerable effort or additional knowledge, e.g. recovering a file after deleting it</p>
-          </div>
+        <div class="block no">
+          <h3>No Reversibility</h3>
+          <p>Not reversible without considerable effort or additional knowledge, e.g. recovering a file after deleting it</p>
         </div>
       </div>
     </div>

@@ -16,17 +16,17 @@
   <div class="info">
     <h1 class="diagram-name">Pinch to Zoom</h1>
     <p>
-      Moving two fingers closer together zooms out, moving them apart zooms back in
+      Pinching with two fingers on the screen zooms in and out
     </p>
   </div>
 
   <div class="diagram-container">
 
-    <video class="video" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
+    <video class="video" src="assets/map-zoom-full.mp4" width="300" height="480" controls loop muted></video>
 
     <div class="column environment">
       <h2>Environment</h2>
-      <p class="quote narrow">What can i do?<br>How do I do it?</p>
+      <p class="quote narrow">What can I do?</p>
       <div class="block neutral">
         <h3>User Action</h3>
         <p>Swiping on the screen with two fingers</p>
@@ -35,6 +35,8 @@
         <h3>System Action</h3>
         <p>Zoom level changes depending on the relative proximity of the fingers</p>
       </div>
+
+      <p class="quote narrow">How do I do it?</p>
       <div class="block no">
         <h3>No Action Presentation</h3>
         <p>Not advertised anywhere in the interface</p>
@@ -52,22 +54,19 @@
 
     <div class="column during">
       <h2>During</h2>
-      <p class="quote">What is happening now?</p>
-      <div class="adjacent">
+      <p class="quote">Is my input working?</p>
+      <div class="block no">
+        <h3>No Input Feedback</h3>
+        <p>No information confirming input</p>
+      </div>
+      <p class="quote">What is happening?</p>
+      <div class="block parent">
+        <h3>Action Feedback</h3>
         <div class="block parent">
-          <h3>Feedback</h3>
-          <p>Continuously gives information on current progress of the action</p>
-          <div class="block parent">
-            <h3>User-Controlled</h3>
-            <p>User controls time during the action</p>
-            <div class="block">
-              <h3>Direct Manipulation</h3>
-              <p>Interaction happens directly on the zooming surface</p>
-            </div>
-            <div class="block">
-              <h3>Indirect Manipulation</h3>
-              <p>Scrollbars are indirectly manipulated</p>
-            </div>
+          <h3>User-Controlled</h3>
+          <div class="block">
+            <h3>Direct Manipulation</h3>
+            <p>Interaction happens directly on the zooming surface</p>
           </div>
         </div>
       </div>
@@ -76,22 +75,18 @@
 
     <div class="column after">
       <h2>After</h2>
-      <p class="quote narrow">what happened?<br>How do I go back?</p>
-      <div class="column">
-        <div class="block">
-          <h3>Feedback</h3>
-          <p>Zoom level has changed</p>
-        </div>
-        <div class="adjacent">
-        <div class="block parent">
-          <h3>Reversibility</h3>
-          <p>Effects of the action can be reversed with little effort</p>
-          <div class="block">
-            <h3>Inverse Action</h3>
-            <p>Pinching the opposite way will zoom back to the original setting</p>
-          </div>
-        </div>
+      <p class="quote narrow">What happened?</p>
+      <div class="block">
+        <h3>Response</h3>
+        <p>Zoom level has changed</p>
       </div>
+      <p class="quote narrow">How do I go back?</p>
+      <div class="block parent">
+        <h3>Reversibility</h3>
+        <div class="block">
+          <h3>Inverse Action</h3>
+          <p>Pinching the opposite way zooms back to the original zoom level</p>
+        </div>
       </div>
     </div>
 

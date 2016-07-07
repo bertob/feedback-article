@@ -15,7 +15,7 @@
 
   <div class="info">
     <h1 class="diagram-name">Swipe to Clear</h1>
-    <p>Swiping horizontally past a certain threshold on a list element and then releasing removes it</p>
+    <p>Swiping list items away horizontally deletes them</p>
   </div>
 
   <div class="diagram-container">
@@ -24,15 +24,18 @@
 
     <div class="column environment">
       <h2>Environment</h2>
-      <p class="quote narrow">What can i do?<br>How do I do it?</p>
+
+      <p class="quote narrow">What can I do?</p>
       <div class="block neutral">
         <h3>User Action</h3>
-        <p>Swiping the screen horizontally for a certain distance</p>
+        <p>Swiping horizontally on the list item for a certain distance</p>
       </div>
       <div class="block neutral">
         <h3>System Action</h3>
         <p>List item is removed</p>
       </div>
+
+      <p class="quote narrow">How do I do it?</p>
       <div class="block no">
         <h3>No Action Presentation</h3>
         <p>Not advertised anywhere in the interface</p>
@@ -41,6 +44,7 @@
 
     <div class="column before">
       <h2>Before</h2>
+
       <p class="quote">What is going to happen?</p>
       <div class="block no">
         <h3>No Preview</h3>
@@ -50,26 +54,27 @@
 
     <div class="column during">
       <h2>During</h2>
-      <p class="quote">What is happening now?</p>
+
+      <p class="quote">Is my input working?</p>
+      <div class="block">
+        <h3>Direct Manipulation</h3>
+        <p>List items directly follow the finger movement</p>
+      </div>
+
+      <p class="quote">What is happening?</p>
       <div class="block parent">
         <h3>Feedback</h3>
-        <p class="wide">Continuously gives information on current progress of the action</p>
         <div class="adjacent">
           <div class="block parent">
             <h3>User-Controlled</h3>
-            <p>User controls time</p>
             <div class="block">
               <h3>Direct Manipulation</h3>
-              <p>List items directly follow the finger movement</p>
+              <p>List item directly follows the finger movement</p>
             </div>
           </div>
-          <div class="block parent">
+          <div class="block">
             <h3>Autonomous</h3>
-            <p>Time is automatic</p>
-            <div class="block part">
-              <h3>Non-Interactive</h3>
-              <p>After the user releases, the card moves off the screen and its slot in the list is closed</p>
-            </div>
+            <p>After releasing, the item moves off the screen, its slot in the list is closed</p>
           </div>
         </div>
       </div>
@@ -78,19 +83,19 @@
 
     <div class="column after">
       <h2>After</h2>
-      <p class="quote narrow">what happened?<br>How do I go back?</p>
-      <div class="column">
-        <div class="block">
-          <h3>Feedback</h3>
-          <p>List item is gone</p>
-        </div>
-        <div class="block parent">
-          <h3>Reversibility</h3>
-          <p>Effects of the action can be reversed with little effort</p>
-          <div class="block part">
-            <h3>Unrelated Action</h3>
-            <p>Banner with "undo" button appears at the bottom</p>
-          </div>
+
+      <p class="quote narrow">what happened?</p>
+      <div class="block">
+        <h3>Feedback</h3>
+        <p>List item is gone</p>
+      </div>
+
+      <p class="quote narrow">How do I go back?</p>
+      <div class="block parent">
+        <h3>Reversibility</h3>
+        <div class="block part">
+          <h3>Unrelated Action</h3>
+          <p>Banner with "undo" button appears at the bottom</p>
         </div>
       </div>
     </div>

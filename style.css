@@ -86,6 +86,9 @@ div,
 .diagram-embed.wide {
   margin: 1em calc((1320px - 800px)/-2);
 }
+.diagram-embed.medium {
+  margin: 1em calc((1000px - 800px)/-2);
+}
 .diagram-embed.narrow {
   margin: 1em calc((880px - 800px)/-2);
 }
@@ -169,7 +172,7 @@ div,
   font-family: "Fira Sans", sans-serif;
 }
 .column {
-  margin: 0.5em;
+  margin: 0.5em 0.5em 0;
 }
 .column:last-child {
   margin-right: 0;
@@ -189,6 +192,9 @@ div,
 }
 .vertical-group > .block:first-child {
   margin-top: 0;
+}
+.diagram-container .video {
+  margin-bottom: 0;
 }
 .block {
   width: 12em;
@@ -266,7 +272,7 @@ p.narrow {
 }
 
 .compact .column {
-  margin: 0.3em;
+  margin: 0.3em 0.3em 0;
   opacity: 0.5;
   padding: 0.3em 0;
   border: 3px solid white;
@@ -285,7 +291,9 @@ p.narrow {
   }
 }
 @media screen and (max-width: 1200px) {
-  .diagram-embed {
+  .diagram-embed,
+  .diagram-embed.narrow,
+  .diagram-embed.wide {
     width: calc(100vw - 20px);
     margin-left: calc(-50vw + 50% + 10px)
   }

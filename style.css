@@ -116,10 +116,12 @@ div,
 }
 .figure .example {
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 .figure.vertical {
   display: block;
   margin-right: 1rem;
+  margin-bottom: 0;
 }
 .figure.vertical .example {
   margin: 0;
@@ -132,6 +134,7 @@ div,
 .figure.center .example {
   display: block;
   width: 100%;
+  margin: 0;
 }
 .figure .example.original {
   width: auto;
@@ -155,7 +158,7 @@ div,
 /* INFO */
 .info {
   margin: 0.5rem;
-  max-width: 60em;
+  width: 45em;
 }
 .info h1 {
   margin-bottom: 0;
@@ -293,6 +296,7 @@ p.narrow {
 @media screen and (max-width: 1200px) {
   .diagram-embed,
   .diagram-embed.narrow,
+  .diagram-embed.medium,
   .diagram-embed.wide {
     width: calc(100vw - 20px);
     margin-left: calc(-50vw + 50% + 10px)
@@ -301,5 +305,36 @@ p.narrow {
 @media screen and (max-width: 900px) {
   .container {
     width: 90%;
+  }
+  .figure-container {
+    display: block;
+  }
+  .figure {
+    display: block;
+    max-width: 100%;
+  }
+  .figure .example {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+  .figure {
+    display: block;
+  }
+  .figure .example + p {
+    /*margin-top: 0;*/
+  }
+}
+@media screen and (max-width: 450px) {
+
+  .adjacent.desktop-only {
+    display: block;
+  }
+  .adjacent.desktop-only .diagram-container {
+    justify-content: center;
+  }
+  .adjacent.desktop-only .column {
+    margin: 0;
   }
 }

@@ -13,12 +13,12 @@
 <div style="
   position: fixed;
   top: 1em;
-  right: -2.6em;
+  right: -2.5em;
   transform: rotate(45deg);
   padding: 0.23em 3em 0.15em;
-  font-size: 1.8em;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   background-color: #777;
   color: white;
 ">DRAFT</div>
@@ -66,12 +66,12 @@ The feedback diagrams make it easy to analyze and compare individual properties 
 
 <iframe class="diagram-embed wide" src="diagram.html" width="1320" height="500"></iframe>
 
-<div class="adjacent">
+<div class="adjacent desktop-only">
 <p>
 This is the structure of the framework, with all the possible properties it can contain. Each box represents a property of the interaction, or lack thereof. The grey boxes (*User Action* and *System Action*) are general properties of an interaction which are present for every action, by definition. The colored blocks represent different types of feedback which can be present or not (red box if it isn't present, one or more green boxes if it is). The transparent boxes structure similar types of feedback in larger categories.
 </p>
 
-<div class="adjacent diagram-container">
+<div class="diagram-container">
   <div class="column">
   </div>
   <div class="block parent">
@@ -151,15 +151,15 @@ The **Environment** describes what the action is, how it is performed, and how i
 
 <figure class="figure">
   <video class="example" src="assets/cursor.ogv" autoplay loop muted></video>
-  The blinking cursor indicates the possibility of text input
+  <p>The blinking cursor indicates the possibility of text input</p>
 </figure>
 <figure class="figure">
   <img class="example" src="assets/buttons.png">
-  The border and background gradient identify these elements as buttons, which tells the user that clicking them will yield an effect
+  <p>The border and background gradient identify these elements as buttons, which tells the user that clicking them will yield an effect</p>
 </figure>
 <figure class="figure">
-  <video class="example" height="70px" src="assets/slide-animation.mp4" autoplay loop muted></video>
-  Label, arrow and animation all tell the user to swipe to the right
+  <video class="example" height="70px" style="max-width: 300px" src="assets/slide-animation.mp4" autoplay loop muted></video>
+  <p>Label, arrow and animation all tell the user to swipe to the right</p>
 </figure>
 
 </div>
@@ -202,40 +202,31 @@ A **Passive Preview** gives the user information about the outcome, without them
 
 <figure class="figure">
   <img class="example" src="assets/buttons-signup.png">
-  The text on these buttons explains what will happen when they are clicked
+  <p>The text on these buttons explains what will happen when they are clicked</p>
 </figure>
 <figure class="figure">
   <img class="example" src="assets/hyperlink.png">
-  The text label on the hyperlink tells the user where it will lead them
+  <p>The text label on the hyperlink tells the user where it will lead them</p>
 </figure>
 <figure class="figure">
   <img class="example" src="assets/button-close.png">
-  The ⨯ icon is widely used to mean "close" in software, so most users will understand it even though there is no explicit text label explaining it
+  <p>The ⨯ icon is widely used to mean "close" in software, so most users will understand it even though there is no explicit text label explaining it</p>
 </figure>
 </div>
 
 <div class="article-block">
 An **Active Preview** gives the user information about the outcome of the action when they interact with the system before starting the action itself. The interaction that triggers the preview must be different from the one that triggers the real action. For example, starting to scroll and then scrolling back immediately wouldn't qualify as a preview, because it is part of the action itself. This is why active previews are often triggered by secondary interactions, such as hover (with a mouse), or long tap (on touch screens).
 
-<div>
-  <div class="figure-container">
-    <figure class="figure vertical">
-      <video class="example" height="300px" src="assets/twitter.ogv" controls loop muted></video>
-      On Twitter, hovering over a user's name shows a hovercard with their bio
-    </figure>
-    <div class="column">
-      <figure class="figure vertical">
-        <img class="example" width="340px" src="assets/hyperlink-hover.png">
-        When hovering on a hyperlink, the link's URL is shown in the bottom left corner of the browser window
-      </figure>
-      <figure class="figure vertical">
-        <video class="example" width="340px" src="assets/youtube.ogv" controls loop muted></video>
-        When hovering over the timeline on a Youtube video, a thumbnail previews the video at a different timestamp
-      </figure>
-    </div>
-  </div>
+<div class="figure-container">
+  <figure class="figure vertical">
+    <video class="example" height="340px" src="assets/twitter.ogv" controls loop muted></video>
+    <p>On Twitter, hovering over a user's name shows a hovercard with their bio</p>
+  </figure>
+  <figure class="figure vertical">
+    <video class="example" height="340px" src="assets/youtube.ogv" controls loop muted></video>
+    <p>When hovering over the timeline on a Youtube video, a thumbnail previews the video at a different timestamp</p>
+  </figure>
 </div>
-
 </div>
 </div>
 
@@ -304,11 +295,11 @@ There are two main categories: Feedback that tells the user that their input was
 
 <figure class="figure">
   <video class="example" height="70px" src="assets/siri-transcript.mp4" autoplay loop muted></video>
-  While talking to Siri, the command is transcribed on the screen in real time, showing the user that they are being heard
+  <p>While talking to Siri, the command is transcribed on the screen in real time, showing the user that they are being heard</p>
 </figure>
 <figure class="figure">
   <video class="example" src="assets/material-button.ogv" autoplay loop muted></video>
-  The radial reaction on the button confirms that the click was received
+  <p>The radial reaction on the button confirms that the click was recognized</p>
 </figure>
 
 </div>
@@ -325,11 +316,11 @@ With **User-Controlled** feedback, the progress of the action is driven by conti
 <div class="figure-container">
   <figure class="figure vertical">
     <video class="example" height="290px" src="assets/inkscape-dm.ogv" controls loop muted></video>
-    In many graphics applications position, scale, and rotation can all be adjusted by directly manipulating elements
+    <p>In many graphics applications position, scale, and rotation can all be adjusted by directly manipulating elements</p>
   </figure>
   <figure class="figure vertical">
     <video class="example" height="290px" src="assets/dnd-undo.ogv" controls loop muted></video>
-    Dragging a file from one file browser window to the other moves it to the folder that is open in the other window
+    <p>Dragging a file from one file browser window to the other moves it to the folder that is open in the other window</p>
   </figure>
 </div>
 
@@ -337,14 +328,14 @@ With **User-Controlled** feedback, the progress of the action is driven by conti
 <div class="article-block">
 **Indirect Manipulation** are actions where interaction and effect happen on different objects.
 
-<div class="figure-container two">
+<div class="figure-container">
   <figure class="figure vertical">
-    <video class="example" src="assets/font-slider.ogv" controls loop muted></video>
-    The slider manipulates the size of the type specimen in real time
+    <video class="example" height="200px" src="assets/font-slider.ogv" controls loop muted></video>
+    <p>The slider manipulates the size of the type specimen in real time</p>
   </figure>
   <figure class="figure vertical">
-    <video class="example" width="300px" src="assets/blur-slider.ogv" controls loop muted></video>
-    The slider manipulates the blur value for the selected rectangle in real time
+    <video class="example" height="200px" src="assets/blur-slider.ogv" controls loop muted></video>
+    <p>The slider manipulates the blur value for the selected rectangle in real time</p>
   </figure>
 </div>
 </div>
@@ -353,21 +344,15 @@ With **User-Controlled** feedback, the progress of the action is driven by conti
 <div class="article-block">
 **Autonomous** feedback is triggered by the user indirectly, and they have no control over its progress. It can be triggered by the start of the interaction, or, in case of a user-controlled interaction, in response to the course the action is taking. The crucial difference to user-controlled feedback is that once it has started it will run its course, and the user cannot influence the direction it is taking until it is finished.
 
-<div class="figure-container">
+<div class="">
   <figure class="figure vertical">
-    <video class="example" height="360px" src="assets/multitasking-transition.mp4" controls loop muted></video>
-    Pressing the multitasking button on Android starts an animated transition to the multitasking view
+    <video class="example" height="210px" src="assets/scroll-animation.ogv" controls loop muted></video>
+    <p>When clicking on the scrollbar, the page autonomously scrolls to the new position with an animation</p>
   </figure>
-  <div class="column">
-    <figure class="figure">
-      <video class="example" height="210px" src="assets/scroll-animation.ogv" controls loop muted></video>
-      When clicking on the scrollbar, the page autonomously scrolls to the new position with an animation
-    </figure>
-    <figure class="figure vertical">
-      <video class="example" width="490px" src="assets/reload-progressbar.ogv" controls loop muted></video>
-      The progress bar gives a sense of what the loading status of the page is
-    </figure>
-  </div>
+  <figure class="figure vertical">
+    <video class="example" width="490px" src="assets/reload-progressbar.ogv" controls loop muted></video>
+    <p>The progress bar gives a sense of what the loading status of the page is</p>
+  </figure>
 </div>
 
 </div>
@@ -452,11 +437,11 @@ Examples:
  <div class="figure-container">
   <figure class="figure vertical">
     <video class="example" height="430px" src="assets/medium-sidebar.mp4" controls loop muted></video>
-    The sidebar in many Android apps can be opened by sliding it in from the left and closed by sliding it back.
+    <p>The sidebar in many Android apps can be opened by sliding it in from the left and closed by sliding it back.</p>
   </figure>
   <figure class="figure vertical">
     <video class="example" height="430px" src="assets/dnd-undo.ogv" controls loop muted></video>
-    Dragging and dropping files to the wrong folder is easily reversible by dragging them back to the original folder
+    <p>Dragging and dropping files to the wrong folder is easily reversible by dragging them back to the original folder</p>
   </figure>
 </div>
 </div>
@@ -466,11 +451,11 @@ Examples:
  <div class="figure-container">
   <figure class="figure vertical">
     <video class="example" height="180px" src="assets/back.ogv" controls loop muted></video>
-    After opening a folder, the back button will navigate back to the previous location
+    <p>After opening a folder, the back button will navigate back to the previous location</p>
   </figure>
   <figure class="figure vertical">
     <video class="example" height="180px" src="assets/delete-undo.ogv" controls loop muted></video>
-    After deleting files a banner with an undo button appears, making it easy to restore accidentally deleted files
+    <p>After deleting files a banner with an undo button appears, making it easy to restore accidentally deleted files</p>
   </figure>
 </div>
 
@@ -537,8 +522,8 @@ There is no action feedback during the action, it instantly switches from start 
 
 Adding user-controlled feedback to something like a hyperlink would be difficult without changing the interaction significantly. There are, however, examples of it being used effectively for navigation of hierarchical structures.
 
-<figure class="figure center" style="width: 320px">
-  <video class="video example" src="assets/facebook-paper.mp4" style="width: 100%; height: 325px;" controls loop muted></video>
+<figure class="figure center" style="width: 280px">
+  <video class="video example" src="assets/facebook-paper.mp4" style="width: 100%; height: 420px;" controls loop muted></video>
   <p>In Facebook Paper, posts are cards which can be opened by swiping up or tapping, and closed by swiping down.</p>
 </figure>
 

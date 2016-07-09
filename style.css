@@ -61,13 +61,11 @@ div,
   font-style: italic;
 }
 .video {
-  height: 410px;
-  width: 230px;
   margin: 0.5rem;
 }
-.video.desktop {
-  width: 430px;
-  height: 355px;
+.video.phone {
+  height: 410px;
+  width: 230px;
 }
 .shadow {
   box-shadow: 0 3px 8px rgba(0,0,0, 0.25);
@@ -82,13 +80,16 @@ div,
   margin: 2em calc((1100px - 800px)/-2) 0.6em;
   border: none;
 }
-.diagram-embed.wide {
+.diagram-embed.w1320 {
   margin: 2em calc((1320px - 800px)/-2) 0.6em;
 }
-.diagram-embed.medium {
+.diagram-embed.w960 {
+  margin: 2em calc((960px - 800px)/-2) 0.6em;
+}
+.diagram-embed.w940 {
   margin: 2em calc((940px - 800px)/-2) 0.6em;
 }
-.diagram-embed.narrow {
+.diagram-embed.w880 {
   margin: 2em calc((880px - 800px)/-2) 0.6em;
 }
 .diagram-container {
@@ -145,7 +146,7 @@ div,
 
 .article-block {
   margin: 1em 0;
-  padding: 0.7em 1em;
+  padding: 0.7em 1em 0;
   background-color:  #c7ffce;
   border-radius: 2px;
   border: 1px solid #ccc;
@@ -296,10 +297,11 @@ p.narrow {
   }
 }
 @media screen and (max-width: 1200px) {
-  .diagram-embed,
-  .diagram-embed.narrow,
-  .diagram-embed.medium,
-  .diagram-embed.wide {
+  .diagram-embed.w1320,
+  .diagram-embed.w960,
+  .diagram-embed.w940,
+  .diagram-embed.w880,
+  .diagram-embed {
     width: calc(100vw - 20px);
     margin-left: calc(-50vw + 50% + 10px)
   }
@@ -339,4 +341,8 @@ p.narrow {
   .adjacent.desktop-only .column {
     margin: 0;
   }
+}
+
+.mt0 {
+  margin-top: 0 !important;
 }

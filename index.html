@@ -48,23 +48,23 @@ For example, changing the zoom level on a document might be done by choosing a n
 If we had to decide between using buttons or pinch-to-zoom, how could we compare them?
 
 <div class="adjacent-videos">
-  <video class="video example desktop" src="assets/zoom-buttons.ogv" width="420" height="480" controls loop muted></video>
-  <video class="video example" src="assets/map-zoom-full.mp4" width="300" height="480" controls loop muted></video>
+  <video class="video example" src="assets/map-buttons.ogv" width="420" height="480" controls loop muted></video>
+  <video class="video example" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
 </div>
 
 When comparing different interactions with similar effects like in this case, it can be difficult to stay on top of all the different variables at play - user actions, discoverability, learnability, feedback at different stages, and reversibility. In order to make interactions comparable while considering all these factors, I have developed a comprehensive framework within which they can be categorized. This makes it easy to analyze and compare individual aspects of interactions in isolation, without losing track of the whole picture. It also clearly highlights where interactions don't provide adequate feedback.
 
 Here are the feedback diagrams same two interactions look like:
 
-<iframe class="diagram-embed" src="zoom-buttons.html" width="1100" height="480"></iframe>
-<iframe class="diagram-embed" src="pinch-to-zoom.html" width="1100" height="515"></iframe>
+<iframe class="diagram-embed w940" src="zoom-buttons.html" width="960" height="480" style="margin-bottom: 0"></iframe>
+<iframe class="diagram-embed w940" src="pinch-to-zoom.html" width="960" height="410" style="margin-top: 0"></iframe>
 
 The feedback diagrams make it easy to analyze and compare individual properties of the two interactions: The zoom buttons are highly discoverable and usable with little or no learning upfront. Pinch-to-zoom, on the other hand, is hard to discover if the user doesn't know about it, but it provides real-time feedback during the user interaction, whereas the zoom buttons require the user to click and then wait for the system to respond. Pinch-to-zoom also doesn't provide a preview, but since it does provide user-controlled feedback and inverse-action reversibility, this isn't as important, because the effects of the user's action are instantly visible to them and easily undone.
 
 
 ## Taxonomy
 
-<iframe class="diagram-embed wide" src="diagram.html" width="1320" height="500"></iframe>
+<iframe class="diagram-embed w1320 mt0" src="diagram.html" width="1320" height="500"></iframe>
 
 <div class="adjacent desktop-only">
 <p>
@@ -97,7 +97,7 @@ The framework is organized of four main categories, which correspond to the stag
 
 ### Environment
 
-<iframe class="diagram-embed medium" src="compact-env.html" width="940" height="325"></iframe>
+<iframe class="diagram-embed w940 mt0" src="compact-env.html" width="940" height="325"></iframe>
 
 The **Environment** describes what the action is, how it is performed, and how it is presented. It is independent of the interaction timeline.
 
@@ -139,7 +139,7 @@ The **Environment** describes what the action is, how it is performed, and how i
 
 ### Before
 
-<iframe class="diagram-embed medium" src="compact-before.html" width="940" height="325"></iframe>
+<iframe class="diagram-embed w940 mt0" src="compact-before.html" width="940" height="325"></iframe>
 
 **Before** starting the action, it is important for the user to know what will happen as a consequence of the action. This helps them find the actions they are looking for in an interface, and saves them the surprise of actions that don't do what they thought they would.
 
@@ -181,7 +181,7 @@ An **Active Preview** gives the user information about the outcome of the action
 
 ### During
 
-<iframe class="diagram-embed medium" src="compact-during.html" width="940" height="325"></iframe>
+<iframe class="diagram-embed w940 mt0" src="compact-during.html" width="940" height="325"></iframe>
 
 **During** the interaction it is important to give the user information on what is happening. If the action requires continuous input, then this feedback is crucial, because it informs how they proceed with the interaction. If it happens autonomously, then feedback is no less important, because it explains to the user what the system is doing between the initial and final state are related.
 
@@ -265,7 +265,7 @@ If there is no **No Action Feedback**, that means the user gets no information a
 
 ### After
 
-<iframe class="diagram-embed medium" src="compact-after.html" width="940" height="325"></iframe>
+<iframe class="diagram-embed w940 mt0" src="compact-after.html" width="940" height="325"></iframe>
 
 **After** the interaction, it is important for the user to be able to see what the system did in response to their action. In case the action was a mistake, they need the ability to easily undo the action and return to the previous state.
 
@@ -319,7 +319,7 @@ Examples:
 </div>
 </div>
 
-<div class="article-block no">
+<div class="article-block no" style="padding-bottom: 0.7em">
   **Not Reversible** actions include both ones that are impossible to undo (e.g. sending an email), and actions that are theoretically reversible, but require a lot of effort or learning to do so (e.g. recovering a file after it was deleted). This is because if reversing the action is as complex as the action itself (or more so), it stops being part of that action and becomes its own action.
 </div>
 
@@ -328,17 +328,17 @@ I have tried to define the categories to be useful in practice to distinguish di
 In fact, the taxonomy is even applicable to interactions outside the typical realm of screen-based graphical user interfaces. The following examples show the breadth of possible applications.
 
 This example provides feedback at almost every level: The interface explains what to do and how to do it, gives instant, user-controlled feeback during the interaction, and is easily reversible with the inverse action.
-<iframe class="diagram-embed narrow" src="slide-to-unlock.html" width="880" height="450"></iframe>
+<iframe class="diagram-embed w880" src="slide-to-unlock.html" width="880" height="450"></iframe>
 
 Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. Action presentation is implicitly provided by the fact that the content is cut off at the edge of the screen, which hints at there being more content outside the visible viewport, and that moving the page can unveil it. There is no preview, but in general, direct manipulation requires less external feedback before the action, since it is built into the manipulation itself. For example, an intrinsically reversible action like scrolling doesn't need a preview as much as e.g. a hyperlink, because scrolling a little and then going back can serve as a kind of active preview.
-<iframe class="diagram-embed narrow" src="scrolling.html" width="880" height="510"></iframe>
+<iframe class="diagram-embed w880" src="scrolling.html" width="880" height="510"></iframe>
 
 On the other side of the spectrum there are interactions with very little feedback. There are examples for this in regular GUIs, but it is even more frequent in keyboard and voice interactions. During voice interactions, where there is uncertainty about whether the computer even understands the natural language command, input feedback is crucial.
-<iframe class="diagram-embed narrow" src="siri.html" width="880" height="510"></iframe>
+<iframe class="diagram-embed w880" src="siri.html" width="880" height="510"></iframe>
 
-<iframe class="diagram-embed narrow" src="youtube-seek.html" width="880" height="430"></iframe>
+<iframe class="diagram-embed w880" src="youtube-seek.html" width="880" height="430"></iframe>
 
-<iframe class="diagram-embed medium" src="swipe-to-clear.html" width="1000" height="500"></iframe>
+<iframe class="diagram-embed w940" src="swipe-to-clear.html" width="1000" height="500"></iframe>
 
 
 ## Application
@@ -359,7 +359,7 @@ This problem gets worse when the action doesn't provide sufficient feedback whil
 
 The hyperlink is the protypical example for an interaction that involves clicking, and it has all of the problems described above.
 
-<iframe class="diagram-embed narrow" src="hyperlink.html" width="880" height="430"></iframe>
+<iframe class="diagram-embed w880" src="hyperlink.html" width="880" height="430"></iframe>
 
 The action presentation is probably sufficient for most users, but the preview could definitely be better. Since the action has no built-in reversibility and preview through something like direct manipulation, providing a comprehensive preview is crucial in helping users decide whether they want to start the action or not. In this case, a way to improving the preview (at least on the desktop) could be to provide an active preview when the user hovers the link, i.e. displaying additional information about the navigation target in a small overlay.
 
@@ -389,7 +389,7 @@ As for reversibility, the browser's back button is not ideal, but at least it is
 
 ### CTRL+C Copying
 As with most keyboard commands, this example provides no feedback before or during the action. However, it is particular in that it doesn't even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
-<iframe class="diagram-embed" src="ctrl+c.html" width="1100" height="410"></iframe>
+<iframe class="diagram-embed w1100" src="ctrl+c.html" width="1100" height="410"></iframe>
 
 Since it is a keyboard command, it is forgivable that there are no action presentation and preview, as that would require graphical elements on the screen, at which point it might as well be a button. Keyboard shortcuts are an optional feature for power users, and as such it is acceptable that they require some learning. A good system for discovering and looking up shortcuts (e.g. [GNOME's shortcut window](https://blogs.gnome.org/aday/2015/12/14/shortcuts-love)) at the OS- or application level is of course important, but that is a much broader issue.
 

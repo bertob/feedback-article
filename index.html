@@ -97,34 +97,7 @@ The framework is organized of four main categories, which correspond to the stag
 
 ### Environment
 
-<div class="diagram-container">
-  <div class="adjacent">
-    <div class="column">
-      <p class="quote">What can I do?</p>
-      <div class="block neutral">
-        <h3>User Action</h3>
-        <p>Physical action the user performs</p>
-      </div>
-      <div class="block neutral">
-        <h3>System Action</h3>
-        <p>System response to the physical action</p>
-      </div>
-    </div>
-    <div class="column">
-      <p class="quote">How do I do it?</p>
-      <div class="adjacent">
-        <div class="block">
-          <h3>Action Presentation</h3>
-          <p>How user action and system action are presented to the user</p>
-        </div>
-        <div class="block no">
-          <h3>No Action Presentation</h3>
-          <p>Availability of the action is not made explicit in the interface</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<iframe class="diagram-embed medium" src="compact-env.html" width="940" height="325"></iframe>
 
 The **Environment** describes what the action is, how it is performed, and how it is presented. It is independent of the interaction timeline.
 
@@ -166,31 +139,7 @@ The **Environment** describes what the action is, how it is performed, and how i
 
 ### Before
 
-<div class="diagram-container">
-  <div class="column">
-    <p class="quote">What is going to happen?</p>
-    <div class="adjacent">
-      <div class="block parent">
-        <h3>Preview</h3>
-        <p class="less-wide">Gives information on the results of the action, before the action itself is started</p>
-        <div class="adjacent">
-          <div class="block">
-            <h3>Passive</h3>
-            <p>Static elements previewing the outcome of the action</p>
-          </div>
-          <div class="block">
-            <h3>Active</h3>
-            <p>User-triggered elements previewing the outcome of the action</p>
-          </div>
-        </div>
-      </div>
-      <div class="block no">
-        <h3>No Preview</h3>
-        <p>No way to know what will happen without triggering the action</p>
-      </div>
-    </div>
-  </div>
-</div>
+<iframe class="diagram-embed medium" src="compact-before.html" width="940" height="325"></iframe>
 
 **Before** starting the action, it is important for the user to know what will happen as a consequence of the action. This helps them find the actions they are looking for in an interface, and saves them the surprise of actions that don't do what they thought they would.
 
@@ -232,59 +181,7 @@ An **Active Preview** gives the user information about the outcome of the action
 
 ### During
 
-
-<div class="diagram-container">
-  <div class="adjacent">
-    <div class="column">
-      <p class="quote">Is my input working?</p>
-      <div class="adjacent">
-        <div class="block">
-          <h3>Input Feedback</h3>
-          <p>Confirms user input but gives no information on progress</p>
-        </div>
-        <div class="column">
-          <div class="block no">
-            <h3>No Input Feedback</h3>
-            <p>No feedback on whether the input was received</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <p class="quote">What is happening?</p>
-      <div class="adjacent">
-        <div class="block parent">
-          <h3>Action Feedback</h3>
-          <p class="wide">Continuous Feedback on current progress of the action</p>
-          <div class="adjacent">
-            <div class="block">
-              <h3>Autonomous</h3>
-              <p>Action progresses autonomously</p>
-            </div>
-            <div class="block parent">
-              <h3>User-Controlled</h3>
-              <p>User controls the progress of the action, making it reversible</p>
-              <div class="block">
-                <h3>Direct Manipulation</h3>
-                <p>Interaction and result on the same object</p>
-              </div>
-              <div class="block">
-                <h3>Indirect Manipulation</h3>
-                <p>Interaction and result on different objects</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="block no">
-            <h3>No Action Feedback</h3>
-            <p>No information on progress between initial and final state</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<iframe class="diagram-embed medium" src="compact-during.html" width="940" height="325"></iframe>
 
 **During** the interaction it is important to give the user information on what is happening. If the action requires continuous input, then this feedback is crucial, because it informs how they proceed with the interaction. If it happens autonomously, then feedback is no less important, because it explains to the user what the system is doing between the initial and final state are related.
 
@@ -368,47 +265,7 @@ If there is no **No Action Feedback**, that means the user gets no information a
 
 ### After
 
-<div class="diagram-container">
-  <div class="adjacent">
-    <div class="column">
-      <p class="quote">What happened?</p>
-      <div class="adjacent">
-        <div class="block">
-          <h3>Response</h3>
-          <p>Consequences of the action are clearly visible</p>
-        </div>
-        <div class="block no">
-          <h3>No Response</h3>
-          <p>After the action it is not clear what exactly the effect was</p>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="column">
-      <p class="quote">How do I go back?</p>
-      <div class="adjacent">
-        <div class="block parent">
-          <h3>Reversibility</h3>
-          <p class="wide">Effects of the action can be reversed with little effort</p>
-          <div class="adjacent">
-            <div class="block">
-              <h3>Inverse Action</h3>
-              <p>Opposite of the action will return system to its previous state</p>
-            </div>
-            <div class="block">
-              <h3>Unrelated Action</h3>
-              <p>Different action enables returning to the previous state</p>
-            </div>
-          </div>
-        </div>
-        <div class="block no">
-          <h3>No Reversibility</h3>
-          <p>Not reversible without considerable effort or additional knowledge</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<iframe class="diagram-embed medium" src="compact-after.html" width="940" height="325"></iframe>
 
 **After** the interaction, it is important for the user to be able to see what the system did in response to their action. In case the action was a mistake, they need the ability to easily undo the action and return to the previous state.
 

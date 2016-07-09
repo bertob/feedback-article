@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagram</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/fira.css">
+</head>
+
+<body>
+
+  <div class="diagram-container compact">
+
+    <div class="column environment active">
+      <h2>Environment</h2>
+      <p class="quote">What can I do?</p>
+      <div class="block neutral">
+        <h3>User Action</h3>
+      </div>
+      <div class="block neutral">
+        <h3>System Action</h3>
+      </div>
+      <p class="quote">How do I do it?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Action Presentation</h3>
+        </div>
+        <div class="block no">
+          <h3>No Action Presentation</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="column before">
+      <h2>Before</h2>
+
+      <p class="quote">What is going to happen?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Preview</h3>
+          <div class="block">
+            <h3>Passive</h3>
+          </div>
+          <div class="block">
+            <h3>Active</h3>
+          </div>
+        </div>
+        <div class="block no">
+          <h3>No Preview</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="column during">
+      <h2>During</h2>
+
+      <p class="quote">Is my input working?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Input Feedback</h3>
+        </div>
+        <div class="block no">
+          <h3>No Input Feedback</h3>
+        </div>
+      </div>
+
+      <p class="quote">What is happening?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Action Feedback</h3>
+          <div class="adjacent">
+            <div class="block parent">
+              <h3>User-Controlled</h3>
+              <div class="block">
+                <h3>Direct Manipulation</h3>
+              </div>
+              <div class="block">
+                <h3>Indirect Manipulation</h3>
+              </div>
+            </div>
+            <div class="block">
+              <h3>Autonomous</h3>
+            </div>
+          </div>
+        </div>
+        <div class="block no">
+          <h3>No Action Feedback</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="column after">
+      <h2>After</h2>
+
+      <p class="quote">What happened?</p>
+      <div class="adjacent">
+        <div class="block">
+          <h3>Response</h3>
+        </div>
+        <div class="block no">
+          <h3>No Response</h3>
+        </div>
+      </div>
+
+      <p class="quote">How do I go back?</p>
+      <div class="adjacent">
+        <div class="block parent">
+          <h3>Reversibility</h3>
+          <div class="block">
+            <h3>Inverse Action</h3>
+          </div>
+          <div class="block">
+            <h3>Unrelated Action</h3>
+          </div>
+        </div>
+        <div class="block no">
+          <h3>No Reversibility</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

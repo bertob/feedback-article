@@ -79,18 +79,17 @@ div,
   margin: 0 auto;
 }
 .diagram-embed {
-  margin: 1em calc((1100px - 800px)/-2);
+  margin: 2em calc((1100px - 800px)/-2) 0.6em;
   border: none;
-  box-shadow: 0 4px 18px rgba(0,0,0, 0.2);
 }
 .diagram-embed.wide {
-  margin: 1em calc((1320px - 800px)/-2);
+  margin: 2em calc((1320px - 800px)/-2) 0.6em;
 }
 .diagram-embed.medium {
-  margin: 1em calc((1000px - 800px)/-2);
+  margin: 2em calc((940px - 800px)/-2) 0.6em;
 }
 .diagram-embed.narrow {
-  margin: 1em calc((880px - 800px)/-2);
+  margin: 2em calc((880px - 800px)/-2) 0.6em;
 }
 .diagram-container {
   margin: 0 auto;
@@ -288,6 +287,9 @@ p.narrow {
 }
 
 @media screen and (max-width: 1350px) {
+  .diagram-embed {
+    box-shadow: 0 4px 18px rgba(0,0,0, 0.2);
+  }
   .diagram-embed.wide {
     width: calc(100vw - 20px);
     margin-left: calc(-50vw + 50% + 10px)

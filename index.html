@@ -31,19 +31,19 @@
 
 When designing interactive systems, providing feedback is crucial to helping users understand them. Comparing the ways in which different interaction patterns give feedback is complex, due to the many variables involved. This can make it difficult to choose the right interaction for a task.
 
-To address this problem, I have developed a framework to categorize individual properties of interactions. This framework can be used to analyze and compare different interactions, enabling designers to choose the right pattern for a specific situation and find potential problems with their designs. I have documented the framework with examples and applied it to real-world interactions to demonstrate how it can be used to improve interfaces.
+To address this problem, I have developed a framework to categorize individual properties of interactions. This framework can be used to analyze and compare different interactions, enabling designers to choose the most appropriate one for a specific situation and find potential problems with their design. I have documented the framework with examples and applied it to real-world interactions to demonstrate how it can be used to analyze, compare, and improve interfaces.
 
 ## Introduction
 
 Every interaction between a human and a machine is *designed* - At some point during the process of building the machine, somebody has to decide which actions it can perform, how they are triggered, what information users get in return, what will happen as a result, and so on.
 
 When making these decisions, there are many factors at play. How do users understand what they can do with the system? How do they know *how* to do it? What will happen when they do it? If they've made a mistake, how can they go back?
-All of these factors (and several more), taken together determine the usability of an interaction. This makes it difficult to compare different interactions intuitively, because it requires keeping all of these factors in mind.
+All of these factors (and several more), taken together, determine the usability of an interaction. This makes it difficult to compare interactions intuitively, because it requires keeping track of all of these factors.
 
-When designing physical objects there are always a number of innate constraints, like weight, materials, and cost that narrow the the number of possible interactions a designer can employ.
+When designing physical objects there are innate constraints. Weight, cost, materials, and other factors narrow down the number of possible interactions a designer can employ.
 With digital interfaces however, designers have almost unlimited freedom in this regard. They can make interfaces behave almost any way they want. Because of the inherent flexibility of the computer as a medium, an interaction in a digital interface can be designed in many different ways, which all provide the same functionality. Since there are so many different variables involved, it is hard to intuitively compare interactions, and thus to decide which is most appropriate.
 
-For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these do essentially the same thing, but wildly differ in structure, complexity, and the feedback they provide.
+For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these do essentially the same thing, but differ significantly in structure, complexity, and the feedback they provide.
 
 If we had to decide between using buttons or pinch-to-zoom, how could we compare them?
 
@@ -52,15 +52,16 @@ If we had to decide between using buttons or pinch-to-zoom, how could we compare
   <video class="video example" src="assets/map-zoom.mp4" width="300" height="480" controls loop muted></video>
 </div>
 
-When comparing different interactions with similar effects like in this case, it can be difficult to stay on top of all the different variables at play - user actions, discoverability, learnability, feedback at different stages, and reversibility. In order to make interactions comparable while considering all these factors, I have developed a comprehensive framework within which they can be categorized. This makes it easy to analyze and compare individual aspects of interactions in isolation, without losing track of the whole picture. It also clearly highlights where interactions don't provide adequate feedback.
+When comparing different interactions with similar effects like in this case, it can be difficult to stay on top of all the different variables at play—user actions, discoverability, learnability, feedback at different stages, and reversibility. In order to make interactions comparable while considering all these factors, I have developed a framework within which they can be categorized. This makes it easy to analyze and compare individual aspects of interactions in isolation, without losing track of the whole picture. It also clearly highlights where interactions do not provide adequate feedback, thus incetivizing desingers to either add more feedback, or motivate why it is not necessary.
 
-Here are the feedback diagrams same two interactions look like:
+Here are the feedback diagrams for the same two interactions:
 
 <iframe class="diagram-embed w940" src="zoom-buttons.html" width="960" height="480" style="margin-bottom: 0"></iframe>
 <iframe class="diagram-embed w940" src="pinch-to-zoom.html" width="960" height="410" style="margin-top: 0"></iframe>
 
-The feedback diagrams make it easy to analyze and compare individual properties of the two interactions: The zoom buttons are highly discoverable and usable with little or no learning upfront. Pinch-to-zoom, on the other hand, is hard to discover if the user doesn't know about it, but it provides real-time feedback during the user interaction, whereas the zoom buttons require the user to click and then wait for the system to respond. Pinch-to-zoom also doesn't provide a preview, but since it does provide user-controlled feedback and inverse-action reversibility, this isn't as important, because the effects of the user's action are instantly visible to them and easily undone.
+The diagrams make it easy to analyze and compare individual properties of the two interactions: The zoom buttons are highly discoverable and usable with little or no learning upfront. Pinch-to-zoom, on the other hand, is hard to discover if the user doesn't know about it, but it provides real-time feedback during the user interaction, whereas the zoom buttons require the user to click and then wait for the system to respond. Pinch-to-zoom also doesn't provide a preview, but since it does provide user-controlled feedback and inverse-action reversibility, this isn't as important, because the effects of the user's action are instantly visible to them and easily undone.
 
+The structure of the framework enables this kind of comprehensive, detailed comparison between atomic parts of different interactions. This can be use
 
 ## Taxonomy
 
@@ -333,17 +334,20 @@ This example provides feedback at almost every level: The interface explains wha
 Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. Action presentation is implicitly provided by the fact that the content is cut off at the edge of the screen, which hints at there being more content outside the visible viewport, and that moving the page can unveil it. There is no preview, but in general, direct manipulation requires less external feedback before the action, since it is built into the manipulation itself. For example, an intrinsically reversible action like scrolling doesn't need a preview as much as e.g. a hyperlink, because scrolling a little and then going back can serve as a kind of active preview.
 <iframe class="diagram-embed w880" src="scrolling.html" width="880" height="510"></iframe>
 
-On the other side of the spectrum there are interactions with very little feedback. There are examples for this in regular GUIs, but it is even more frequent in keyboard and voice interactions. During voice interactions, where there is uncertainty about whether the computer even understands the natural language command, input feedback is crucial.
+On the other side of the spectrum there are interactions with very little feedback. This is very common in keyboard and voice interactions, because these ways of interacting don't allow for things like user-controlled feedback or inverse action reversibility. During voice interactions, where there is uncertainty about whether the computer even understands the spoken command, input feedback is crucial.
 <iframe class="diagram-embed w880" src="siri.html" width="880" height="510"></iframe>
 
+As this example shows, a good preview can alleviate the lack of action feedback to some extent. The thumbnail displayed on hover gives the user an idea of what part of the video they'll be skipping to, instead of leaving them in the dark until they've actually clicked (which is what most video players do). Theoretically, this example could probably provide user-controlled feedback through indirect manipulation of the slider, but due to technical reasons (it would require the entire video to be cached up front) it is not practical in this case.
+
+For interactions that can't provide user-controlled action feedback, like mouse clicks or keyboard commands, previews can help the user decide whether this is the action they want to trigger.
 <iframe class="diagram-embed w880" src="youtube-seek.html" width="880" height="430"></iframe>
 
+There are also actions with multiple distinct phases, which provide different types of feedback during the different phases. In this example there is an initial "trigger" phase during which the user swipes the list element horizontally. When they release the element, a second "action" phase is initiated. Depending on how far the element was moved, it either snaps back into position or slides out of view, and its slot in the list is closed. This means that even though part of the action provides user-controlled feedback, there is no inverse-action reversibility, since the element is no longer visible. Instead, the app shows a banner with an undo button after the action is complete.
 <iframe class="diagram-embed w940" src="swipe-to-clear.html" width="1000" height="500"></iframe>
 
 
 ## Application
 The goal of this project is to provide a tool that makes it easier to analyze interactions, compare them, and find potential problems in how they give feedback to the user. To demonstrate the taxonomy's usefulness in this regard, I have used it to analyze a few real-world interaction patterns, highlighting where they succeed, where they fall short, and what could be improved.
-
 
 ### Clicking for Navigation
 Links, tabs, menus, and other navigation elements that are clicked or tapped all suffer from the same problem: It is [hard to know](http://www.jonikorpi.com/zoomable-ui-for-the-web) what exactly will happen when you click them, even if they are clearly labelled. This is because the click is an inherently ambiguous interaction. It doesn't have a direction, duration, or other variable that conveys meaning beyond the coordinates of the click.
@@ -388,7 +392,7 @@ As for reversibility, the browser's back button is not ideal, but at least it is
 
 
 ### CTRL+C Copying
-As with most keyboard commands, this example provides no feedback before or during the action. However, it is particular in that it doesn't even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
+Like most keyboard commands, this example provides no feedback before or during the action. However, it is particular in that it doesn't even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
 <iframe class="diagram-embed w1100" src="ctrl+c.html" width="1100" height="410"></iframe>
 
 Since it is a keyboard command, it is forgivable that there are no action presentation and preview, as that would require graphical elements on the screen, at which point it might as well be a button. Keyboard shortcuts are an optional feature for power users, and as such it is acceptable that they require some learning. A good system for discovering and looking up shortcuts (e.g. [GNOME's shortcut window](https://blogs.gnome.org/aday/2015/12/14/shortcuts-love)) at the OS- or application level is of course important, but that is a much broader issue.
@@ -410,11 +414,15 @@ The same is true for response: A visual clipboard would make the effect of the a
 
 
 ## Future Work
-An aspect of this project I have not yet investigated in detail is the power and complexity of user and system actions. Considering the possibile number of inputs and outputs that different actions produce (for example, pressing a button has one possible outcome, moving a slider can have thousands), there should be a way to systematically distinguish between different levels of complexity. This could take the form of additional subcategories in the *Environment* column, but has to be investigated further.
+Though the framework is quite general and applicable to a wide range of interactions, there are some parts of it which I believe should be explored further. I have investigated some of them, but decided that they would ultimately go beyond the scope of this project, which was primarily focused on feedback, and become a more general-purpose framework for analyzing all aspects of interactions.
 
-Another idea I have not explored in detail yet is the cognitive and physical effort that different actions require. Some actions, especially direct manipulation, provide a lot of feedback, which makes them easy to grasp, but also require very precise input, which can make them inefficient in the long run. Once the user is intimately familiar with the action, direct manipulation is often no longer be the best way to perform it, because they have learned a more convenient shortcut. For example, dragging an element into the trash can to delete it requires significantly more effort than clicking a "delete" icon and clicking it, and a lot more effort than pressing the "delete" key on the keyboard.
+One such area is the power and complexity of user and system actions. Considering the possibile number of inputs and outputs that different actions produce (for example, pressing a button has one possible outcome, moving a slider can have thousands), there should be a way to systematically distinguish between different levels of complexity. This could, for example, take the form of additional subcategories in the *Environment* column.
 
-...
+Another idea I have not explored in detail yet is the cognitive and physical effort that different actions require. Some types of actions, especially direct manipulation, provide a lot of feedback, which makes them easy to grasp, but also require very precise input, which can make them inefficient in the long run. Once the user is intimately familiar with an action, direct manipulation is often no longer be the best way to perform it, because they have learned a more convenient shortcut. For example, dragging an element into the trash can to delete it requires significantly more effort than clicking a "delete" icon and clicking it, and a lot more effort than pressing the "delete" key on the keyboard.
+The availability of certain input methods (e.g. mouse, touchscreen, physical keyboard) is likely an important factor in determining how much effort something requires, and needs to be investigated further.
+
+Identifying different types of effort and finding ways to categorize and quantify them could provide an even more complete picture of interactions than the current framework does.
+
 
 ## Conclusion
 I have developed a comprehensive framework to categorize and compare feedback in user interfaces. I have then applied the framework to real-world examples and shown how to use it to analyze interactions in detail, find problems in how they provide feedback, and make suggestions for improving it.

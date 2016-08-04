@@ -22,44 +22,27 @@
 
     <video class="video phone" src="assets/browser-zoom.mp4" width="300" height="480" controls loop muted></video>
 
-    <div class="column environment">
-      <h2>Environment</h2>
-      <p class="quote">What can I do?</p>
-      <div class="block neutral">
-        <h3>User Action</h3>
-        <p>Swiping the screen vertically</p>
-      </div>
-      <div class="block neutral">
-        <h3>System Action</h3>
-        <p>Page moves vertically</p>
-      </div>
-      <p class="quote">How do I do it?</p>
-      <div class="block">
-        <h3>Action Presentation</h3>
-        <p>The cut-off content hints at the page being scrollable</p>
-      </div>
-    </div>
 
     <div class="column before">
-      <h2>Before</h2>
+      <h2>Pre-Action</h2>
       <p class="quote">What is going to happen?</p>
       <div class="block parent">
-        <h3>No Preview</h3>
-        <div class="block no">
+        <h3>Preview</h3>
+        <div class="block">
           <h3>Passive</h3>
-          <p>No way to know what content is outside the current viewport without starting the action</p>
+          <p>The cut-off content hints at there being more content below</p>
         </div>
       </div>
     </div>
 
     <div class="column during">
-      <h2>During</h2>
-      <p class="quote">What is happening?</p>
+      <h2>Action</h2>
+      <p class="quote">What happened so far?</p>
       <div class="block no">
         <h3>No Input Feedback</h3>
         <p>No feedback exclusively confirming input, though direct manipulation provides it indirectly</p>
       </div>
-      <p class="quote">What is happening?</p>
+      <p class="quote">What happened so far?</p>
       <div class="block parent">
         <h3>Action Feedback</h3>
         <div class="block parent">
@@ -74,13 +57,19 @@
           </div>
         </div>
       </div>
+      <p class="quote narrow">What will happen now?</p>
+      <div class="block">
+        <h3>Action Feedforward</h3>
+        <p>The content following the finger's movement hints at the future behavior</p>
+      </div>
+
     </div>
 
     <div class="column after">
-      <h2>After</h2>
+      <h2>Post-Action</h2>
       <p class="quote">What happened?</p>
       <div class="block">
-        <h3>Response</h3>
+        <h3>Result</h3>
         <p>Different part of the page is visible</p>
       </div>
       <p class="quote">How do I go back?</p>

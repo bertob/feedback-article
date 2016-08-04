@@ -20,29 +20,10 @@
 
   <div class="diagram-container">
 
-    <video class="video" src="assets/map-buttons.ogv" style="width: 320px; height: 304px;" controls loop muted></video>
-
-    <div class="column environment">
-      <h2>Environment</h2>
-      <p class="quote narrow">What can I do?</p>
-      <div class="block neutral">
-        <h3>User Action</h3>
-        <p>Moving mouse cursor over the buttons, pressing left mouse button</p>
-      </div>
-      <div class="block neutral">
-        <h3>System Action</h3>
-        <p>Zoom level increases and decreases in fixed increments, depending on which button is clicked</p>
-      </div>
-
-      <p class="quote narrow">How do I do it?</p>
-      <div class="block">
-        <h3>Action Presentation</h3>
-        <p>The buttons look like all other system buttons, indicating their clickability</p>
-      </div>
-    </div>
+    <video class="video" src="assets/map-buttons.ogv" style="width: 305px; height: 295px;" controls loop muted></video>
 
     <div class="column before">
-      <h2>Before</h2>
+      <h2>Pre-Action</h2>
       <p class="quote">What is going to happen?</p>
       <div class="block parent">
         <h3>Preview</h3>
@@ -54,13 +35,13 @@
     </div>
 
     <div class="column during">
-      <h2>During</h2>
+      <h2>Action</h2>
       <p class="quote">Is my input working?</p>
       <div class="block">
         <h3>Input Feedback</h3>
         <p>Button color changes while it's being clicked</p>
       </div>
-      <p class="quote">What is happening?</p>
+      <p class="quote">What happened so far?</p>
       <div class="block parent">
         <h3>Action Feedback</h3>
         <div class="block">
@@ -68,13 +49,19 @@
           <p>Zoom animation</p>
         </div>
       </div>
+      <p class="quote narrow">What will happen now?</p>
+      <div class="block no">
+        <h3>No Action Feedforward</h3>
+        <p>No information on what will happen</p>
+      </div>
+
     </div>
 
     <div class="column after">
-      <h2>After</h2>
+      <h2>Post-Action</h2>
       <p class="quote narrow">What happened?</p>
       <div class="block">
-        <h3>Response</h3>
+        <h3>Result</h3>
         <p>Zoom level has changed</p>
       </div>
       <p class="quote narrow">How do I go back?</p>

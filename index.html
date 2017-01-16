@@ -44,7 +44,7 @@ All of these factors influence the usability of an interaction. Comparing intera
 When designing physical objects, there are innate constraints. Considerations like weight, cost, or materials reduce the number of possible interactions a designer can employ.
 With digital interfaces however, designers have almost unlimited freedom in this regard [[5]](#frog). They can make interfaces behave almost any way they want. Because of the inherent flexibility of the computer as a medium, an interaction in a digital interface can be designed in many different ways, which all provide the same functionality. Since there are so many different variables involved, it is hard to intuitively compare interactions, and thus to decide which is most appropriate.
 
-For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these do essentially the same thing, but differ significantly in structure, complexity, and the ff feedback they provide.
+For example, changing the zoom level on a document might be done by choosing a numeric value, clicking + and - buttons, moving a slider, keyboard shortcuts, pinch-to-zoom, or any number of other interactions. All of these do essentially the same thing, but differ significantly in structure, complexity, and the feedforward and feedback they provide.
 
 If we had to decide between using buttons or pinch-to-zoom, how could we compare them?
 
@@ -64,14 +64,14 @@ Here is an example of applying the framework:
 <iframe class="diagram-embed" src="zoom-buttons.html" width="800" height="440" style="margin-bottom: 0"></iframe>
 <iframe class="diagram-embed" src="pinch-to-zoom.html" width="800" height="550" style="margin-top: 0"></iframe>
 
-The diagrams make it easy to analyze and compare individual properties of the two interactions: The zoom buttons are highly discoverable and usable with little or no learning upfront. Pinch-to-zoom, on the other hand, is hard to discover if the user doesn't know about it, but it provides real-time feedback during the user interaction, whereas the zoom buttons require the user to click and then wait for the system to respond. Pinch-to-zoom also doesn't provide a preview, but since it does provide user-controlled feedback and inverse-action reversibility, this isn't as important, because the effects of the user's action are instantly visible to them and easily undone.
+The diagrams make it easy to analyze and compare individual properties of the two interactions: The zoom buttons are highly discoverable and usable with little or no learning upfront. Pinch-to-zoom, on the other hand, is hard to discover if the user does not know about it, but it provides real-time feedback during the user interaction, whereas the zoom buttons require the user to click and then wait for the system to respond. Pinch-to-zoom also does not provide a preview, but since it does provide user-controlled feedback and inverse-action reversibility, this isn't as important, because the effects of the user's action are instantly visible to them and easily undone.
 
 
 ## Related Work
 
-In *The Design Of Every Day Things* [[4]](#doet) Norman describes the two gulfs that people face when operating a novel device. The gulf of execution, where they need to understand how to use it, and the gulf of evaluation, where they need to make sense of the device's response. Bridging these two gulfs requires *feedforward* and *feedback*.
+In *The Design Of Everyday Things* [[4]](#doet) Norman describes the two gulfs that people face when operating a novel device. The gulf of execution, where they need to understand how to use it, and the gulf of evaluation, where they need to make sense of the device's response. Bridging these two gulfs requires *feedforward* and *feedback*.
 
-Feedforward explains what will happen before the action is started, feedback explains what happened after the action.
+Feedforward explains what will happen before the action is started, feedback explains what happened, after the action has taken place.
 
 <figure class="figure center wide">
 <img class="example" src="assets/diagram-gulfs.svg">
@@ -94,7 +94,7 @@ When choosing or comparing interactions, all of these types of feedforward and f
 
 <figure class="figure center wide">
 <img class="example" src="assets/prepost2.svg">
-<p>The pre/post-action model, extended with the notios of feedforward and feeback during various stages and reversibility</p>
+<p>The pre/post-action model, extended with the notions of feedforward and feeback during various stages, and reversibility</p>
 </figure>
 
 
@@ -179,12 +179,12 @@ An **Active Preview** gives the user information about the outcome of the action
 
 Neither Norman nor Djadjadiningrat et al. explicitly talk about feedforward and feedback during the action itself. However, many actions can not be categorized in a simple pre/post-action model, because they consist of several smaller actions, each of which can provide feedforward and feedback. For example, when dragging and dropping a file from one folder to another, the user performs a series of actions (clicking the file, moving the cursor to a specific location, releasing the mouse-button), which, taken together, have the intended effect. Therefore, to analyze these types of actions, we need to consider feedforward and feedback not just before and after the action, but also while it is beeing performed.
 
-If the action requires continuous input, then feedback helps the user understand what the current progress of the action is, informing how to proceed with the interaction. If the action has more than one possible outcome, than feedforward helps them evaluate and choose between possible outcomes. If the action happens autonomously, then feedback can help explain to the user what the system is doing between the initial and final state.
+If the action requires continuous input, then feedback helps the user understand what the current progress of the action is, informing how to proceed with the interaction. If the action has more than one possible outcome then feedforward helps them evaluate and choose between possible outcomes. If the action happens autonomously, then feedback can help explain to the user what the system is doing between the initial and final state.
 
 We have identified two main categories of feedback during actions: feedback that tells the user that their input was received (Input Feedback), and feedback that shows the user what has happened as a result of their input (Action Feedback).
 
 <div class="article-block">
-**Input Feedback** confirms the user's input, reassuring them that their action was recognized. It doesn't give any information about the status or progress of the action. In some cases, even though the user input was received properly, the action itself doesn't work. For example, clicking a file the user doesn't have permission to open will not open the file, even though this is the correct interaction for opening it.
+**Input Feedback** confirms the user's input, reassuring them that their action was recognized. It does not give any information about the status or progress of the action. In some cases, even though the user input was received properly, the action itself does not work. For example, clicking a file the user does not have permission to open will not open the file, even though this is the correct interaction for opening it.
 
 <figure class="figure">
   <video class="example" height="70px" width="360px" src="assets/siri-transcript.mp4" autoplay loop muted></video>
@@ -277,9 +277,9 @@ If an action requires continuous input ore has multiple possibles outputs, **Act
 
 <iframe class="diagram-embed mt0" src="compact-after.html" width="800" height="385"></iframe>
 
-Giving the user feedback after an action is a well-recognized tenet of good design [[4]](#doet). It helps users make sense of what the effect of there action was and evaluate whether it is what they wanted. In our framework we refer to this type of feedback as *result* in order to distinguish it from action feedback, which occurs during the action.
+Giving the user feedback after an action is a well-recognized tenet of good design [[4]](#doet). It helps users make sense of what the effect of their action was and evaluate whether it is what they wanted. In our framework we refer to this type of feedback as *result* in order to distinguish it from action feedback, which occurs during the action.
 
-In *The Design of Every Day Things* [[4]](#doet) Norman argues for making actions easily reversible in order to minimize the impact of human mistakes. In our opinion, reversibility should be considered part of an action because it affects the impact of feedforward in previous stages. If the potential cost of getting the action wrong is low, feedforward before the action is less important. For example, an action which is easily reversible, like scrolling a page, doesn't need a preview as much as an action which is hard or impossible to undo, like deleting a file.
+In *The Design of Everyday Things* [[4]](#doet) Norman argues for making actions easily reversible in order to minimize the impact of human mistakes. In our opinion, reversibility should be considered part of an action because it affects the impact of feedforward in previous stages. If the potential cost of getting the action wrong is low, feedforward before the action is less important. For example, an action which is easily reversible, like scrolling a page, does not need a preview as much as an action which is hard or impossible to undo, like deleting a file.
 
 Telling the user how to undo the action can be seen as a type of feedforward with respect to a second action which reverses the effects of the previous one. To distinguish this concept from *preview* and *action feedforward*, we refer to feedforward after the action as *reversibility*.
 
@@ -347,14 +347,14 @@ The framework is applicable to a wide range of interactions, inside and outside 
 This example provides information at almost every level: The interface explains what to do and how to do it, gives instant, user-controlled feeback during the interaction, and is easily reversible with the inverse action.
 <iframe class="diagram-embed" src="slide-to-unlock.html" width="800" height="525"></iframe>
 
-Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. There is no preview, but in general, direct manipulation requires less external feedback before the action, since it is built into the manipulation itself. For example, an intrinsically reversible action like scrolling doesn't need a preview as much as e.g. a hyperlink, because scrolling a little and then going back can serve as a kind of active preview.
+Scrolling on a touchscreen is one of the simplest examples of direct manipulation, and it shows how straightforward inverse action reversibility can be. There is no preview, but in general, direct manipulation requires less external feedback before the action, since it is built into the manipulation itself. For example, an intrinsically reversible action like scrolling does not need a preview as much as e.g. a hyperlink, because scrolling a little and then going back can serve as a kind of active preview.
 <iframe class="diagram-embed" src="scrolling.html" width="800" height="635"></iframe>
 
 On the other side of the spectrum there are interactions wich provide very little information. This is very common in keyboard and voice interactions, because these ways of interacting don't allow for things like user-controlled feedback or inverse action reversibility. In this example, input feedback helps reduce uncertainty about whether the computer even understands the spoken command.
 <iframe class="diagram-embed" src="siri.html" width="800" height="510"></iframe>
 
 As this example shows, a detailed preview can alleviate the lack of action feedback to some extent. The thumbnail displayed on hover gives the user an idea of what part of the video they'll be skipping to, instead of leaving them in the dark until they've actually clicked (which is what most video players do).
-If an interactions can't provide user-controlled action feedback (e.g. mouse clicks or keyboard commands), previews can help the user decide whether this is the action they want to trigger.
+If an interaction can not provide user-controlled action feedback (e.g. mouse clicks or keyboard commands), previews can help the user decide whether this is the action they want to trigger.
 <iframe class="diagram-embed" src="youtube-seek.html" width="800" height="410"></iframe>
 
 There are also actions with multiple distinct phases, which provide different types of feedback and feedforward during the different phases. In this example there is an initial "trigger" phase during which the user swipes the list element horizontally. When they release the element, a second "action" phase is initiated. Depending on how far the element was moved, it either snaps back into position or slides out of view, and its slot in the list is closed. This means that even though part of the action provides user-controlled feedback, there is no inverse-action reversibility, since the element is no longer visible. Instead, the app shows a banner with an undo button after the action is complete.
@@ -365,7 +365,7 @@ There are also actions with multiple distinct phases, which provide different ty
 To demonstrate the framework's usefulness in practice, I have used it to analyze a few real-world interaction patterns, highlighting where they succeed, where they fall short, and what could be improved.
 
 ### Clicking for Navigation
-Links, tabs, menus, and other navigation elements that are clicked or tapped all suffer from the same problem: It is [hard to know](http://www.jonikorpi.com/zoomable-ui-for-the-web) what exactly will happen when you click them, even if they are clearly labelled. This is because the click is an inherently ambiguous interaction. It doesn't have a direction, duration, or other variables that conveys meaning beyond the coordinates of the click.
+Links, tabs, menus, and other navigation elements that are clicked or tapped all suffer from the same problem: It is [hard to know](http://www.jonikorpi.com/zoomable-ui-for-the-web) what exactly will happen when you click them, even if they are clearly labelled. This is because the click is an inherently ambiguous interaction. It does not have a direction, duration, or other variables that convey meaning beyond the coordinates of the click.
 
 <figure class="figure center">
 <img class="example" src="assets/click-menus.svg">
@@ -400,7 +400,7 @@ As for reversibility, the browser's back button provides unrelated-action revers
 
 
 ### CTRL+C Copying
-Like most keyboard commands, this example provides no information before or during the action. However, it is particular in that it doesn't even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
+Like most keyboard commands, this example provides no information before or during the action. However, it is particular in that it does not even have visible effects, and reversibility is completely impossible, because the previous clipboard content is overwritten with no way to get it back.
 <iframe class="diagram-embed w870" src="ctrl+c.html" width="880" height="445"></iframe>
 
 Since it is a keyboard command, it is forgivable that there is no preview, as that would require graphical elements on the screen. Keyboard shortcuts are an optional feature for power users, and as such it is acceptable that they require some learning. A good system for discovering and looking up shortcuts (e.g. [GNOME's shortcut window](https://blogs.gnome.org/aday/2015/12/14/shortcuts-love)) at the OS- or application level is of course important, but that is a much broader issue.
